@@ -303,7 +303,7 @@ body {
 #section3 {
   scroll-snap-align: start;
   height: 100vh;
-  background-image: url("../images/Section_3.png");
+  background-image: url("https://tse3.mm.bing.net/th?id=OIP.hGWEMWXLt0lbeeU5DOwQggHaE8&pid=Api&P=0");
   background-size: cover;
   background-position: right;
 }
@@ -335,7 +335,8 @@ body {
   width: 80%;
   height: 20%;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  /* align-items: center; */
   column-gap: 50px;
   padding-top: 70px;
 }
@@ -343,8 +344,9 @@ body {
 #section4 > .content {
   flex: 1;
 }
-#section4 > .title > h3 {
-  font-size: 36px;
+#section4 > .title > h1 {
+  font-size: 60px;
+  margin: 50px;
 }
 #section4 > .content > h5 {
   font-size: 16px;
