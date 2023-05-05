@@ -1,0 +1,17 @@
+const mongoose = require("mongoose")
+
+const userSchema = mongoose.Schema({
+    name: {type: String, required: true },
+    userName: {type: String, required: true, unique: true },
+    email: {type: String, required: true, unique: true },
+    password: {type: String, required: true },
+    profilePic: {type: String, default: "../pics/user_icon.png" },
+    userType: {type: String, required: true, default: "user", enum: ["user", "developer", "admin"] },
+    createdAt: {type: Date, required: true, default: Date.now() }
+})
+
+const User = mongoose.model("user", userSchema)
+
+module.exports = {
+    User
+}
