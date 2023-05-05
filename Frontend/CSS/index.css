@@ -302,10 +302,38 @@ body {
 
 #section3 {
   scroll-snap-align: start;
-  height: 100vh;
-  background-image: url("https://tse3.mm.bing.net/th?id=OIP.hGWEMWXLt0lbeeU5DOwQggHaE8&pid=Api&P=0");
+  height: 140vh;
+  background-image: url("https://img.freepik.com/free-photo/beautiful-woman-has-cutting-hair-hairdresser_329181-1942.jpg?w=996&t=st=1683302313~exp=1683302913~hmac=f97dec60e4332ee33c079e1e9b39a33eda5efd6d5408c407f7727ab9fb4ef9d7");
   background-size: cover;
   background-position: right;
+}
+#btn1{
+  height: 65px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+  background-color: rgb(171,163,163);
+  border-radius:75px;
+  position: relative;
+  top: 80px;
+  left: 680px;
+  border:none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+
+}
+#h1{
+
+  text-align: center;
+  font-size: 80px;
+  padding-top: 280px;
+  color: whitesmoke;
+}
+#btn1:hover{
+cursor: pointer;
+background-color: white;
 }
 /* #section3>img{
   object-fit: cover;
@@ -323,7 +351,7 @@ body {
   scroll-snap-type: none;
   padding-bottom: 80px;
   color: #fff;
-  background-image: url("https://www.mygreentrends.in/wp-content/themes/greentrends/images/bg03.jpg");
+  background-image: url("https://img.freepik.com/free-photo/young-man-barbershop-trimming-hair_1303-26256.jpg?w=996&t=st=1683302405~exp=1683303005~hmac=8b7570709ae4dea9ec9f3a9740ed8394297eeaa86e81a644d96ac1457157f3fa");
   background-color: #000000c2;
   background-repeat: no-repeat;
   background-size: cover;
@@ -345,8 +373,9 @@ body {
   flex: 1;
 }
 #section4 > .title > h1 {
-  font-size: 60px;
-  margin: 50px;
+  font-size: 70px;
+ 
+  margin-top: 230px;
 }
 #section4 > .content > h5 {
   font-size: 16px;
