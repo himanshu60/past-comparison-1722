@@ -35,10 +35,10 @@ userRouter.post("/login", async(req,res)=>{
             bcrypt.compare(userDetail.password, user[0].password, async(err,result)=>{
                 if (result){
                     const token = jwt.sign({userID: user[0]._id}, process.env.secretKey, {
-                        expiresIn: 60 //43200
+                        expiresIn: 43200
                     })
                     const refreshToken = jwt.sign({userID: user[0]._id}, process.env.refreshSecret, {
-                        expiresIn: 120 // 86400
+                        expiresIn: 86400
                     })
                     res.cookie("userID", user[0]._id)
                     res.cookie("token", token)
@@ -100,7 +100,7 @@ userRouter.get("/refreshToken", async(req,res)=>{
                 }
                 else{
                     const token = jwt.sign({userID: decoded.userID}, process.env.secretKey, {
-                        expiresIn: 60 // 43200
+                        expiresIn: 43200
                     })
                     res.cookie("token", token)
                     res.status(200).send({message: "Token Generated from RefreshToken", token})

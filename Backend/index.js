@@ -17,7 +17,7 @@ app.use("/user", userRouter)
 
 
 app.get("/", (req,res)=>{
-    res.status(200).send({msg: "Hello from Backend App Home Page"})
+    res.status(200).send({msg: "Hello from Backend Home Page"})
 })
 
 
