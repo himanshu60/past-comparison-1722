@@ -2,7 +2,7 @@
 /*                     copy this to get navbar and footer                     */
 /* -------------------------------------------------------------------------- */
 import { Navbar } from "../components/Navbar.js";
-import Footer from "../components/Footer.js";
+// import Footer from "../components/Footer.js";
 
 window.onload = () => {
   document.getElementById("nav-logo").src = "./images/second.jpg";
@@ -58,8 +58,8 @@ navTrigger.addEventListener("click", function () {
 
 /* --------------------------------- Footer --------------------------------- */
 
-let footer = document.getElementById("footer-main");
-footer.innerHTML = Footer();
+// let footer = document.getElementById("footer-main");
+// footer.innerHTML = Footer();
 
 /* -------------------------------------------------------------------------- */
 /*                     copy this to get navbar and footer                     */
