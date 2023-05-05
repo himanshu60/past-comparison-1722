@@ -1,0 +1,28 @@
+.navParent{
+    /* top: 0; */
+    position: fixed;
+    z-index: 500;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.616);
+    font-size: calc(10px + 2vmin);
+}
+.navDiv{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-around;
+    padding: 10px;
+    height: 50px;
+    width: 80%;
+    margin: auto;
+}
+a{
+    text-decoration: none;
+    /* color: black; */
+    color: white;
+    transition: .2s;
+}
+a:hover{
+    transition: .2s;
+    color: blueviolet;
+}
