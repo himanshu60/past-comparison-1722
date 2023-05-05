@@ -1,84 +1,91 @@
-body {
-    margin: 0;
+* { 
+    margin : 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
-    background-color: #f0f0f0;
-    background-image: url('data:image/svg+xml,%3Csvg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z" fill="%239C92AC" fill-opacity="0.4" fill-rule="evenodd"/%3E%3C/svg%3E');
- }
+    box-sizing : border-box;
+    font-family : "Poppins", sans-serif;
+}
+body {
+    background-image: url('https://www.timeoutabudhabi.com/cloud/timeoutabudhabi/2021/09/10/UIqEYGxW-barbershop4-1.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: rgb(235, 235, 235);
+    padding:0;
+    margin:0;
 
-
-.grid {
+}
+.back_img{
+    background-color: rgba(139, 139, 139, 0.449);
     width: 80%;
     margin: auto;
+    padding: 80px;
+}
+.container {
+   
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+
 }
 
-.item {
-    position: relative;
-    height: 20rem;
-    background-color: lightGrey;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
-}
-h3 {
-    margin: 0;
-    display: block;
-    background-color: rgb(136, 136, 136);
-    padding: 1rem;
-}
-#price {
-    margin: 0;
-    display: block;
-    background-color: rgb(108, 108, 108);
-    padding: 1rem;
+.container .card {
+position: relative;
+max-width : 300px;
+height : 215px;  
+background-color : #ede4e4;
+margin : 30px 10px;
+padding : 20px 15px;
+
+display : flex;
+flex-direction : column;
+box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+transition : 0.3s ease-in-out;
+border-radius : 15px;
 }
 
-a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-
-    &:hover,
-    &:focus {
-    ~ .item__overlay {
-        transform: translate3d(0, 0, 0);
-    }
-    }
+.container .card:hover {
+height : 350px;    
 }
 
 
-img {
-width: 100%;
-height: 250px;
-display: block;
-object-fit:cover;
+.container .card .image {
+position : relative;
+width : 260px;
+height : 260px;
+top : -40%;
+left: 8px;
+box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+z-index : 1;
 }
 
-.item__overlay {
-display: flex;
-flex-direction: column;
-justify-content: center;
-height: 100%;
-position: absolute;
-width: 100%;
-top: 0;
-transition: transform 300ms;
-background-color: lighten(rgb(124, 124, 124), 15%);
-transform: translate3d(0, calc(100% - 3.5rem), 0);
+.container .card .image img {
+max-width : 100%;
+border-radius : 15px;
 }
 
-.item__body {
-flex-grow: 1;
-padding: 1rem;
-background-color: rgb(163, 163, 163);
+.container .card .content {
+position : relative;
+top : -140px;
+padding : 10px 15px;
+color : #111;
+text-align : center;
 
-p {
-    margin: 0;
+visibility : hidden;
+opacity : 0;
+transition : 0.3s ease-in-out;
+
 }
+
+.container .card:hover .content {
+margin-top : 30px;
+visibility : visible;
+opacity : 1;
+transition-delay: 0.2s;
+
+}
+#Book{
+    margin-top: 10px;
+    padding: 7px 35px 7px 35px;
+    border: 0px solid;
+    background-color: black;
+    color: white;
 }
