@@ -14,10 +14,8 @@ async function login(event) {
       password
     };
 
-    console.log(role)
 
-
-    let logurl = ``;
+    let logurl = `http://localhost:4500/user/login`;
 
     let res = await fetch(logurl, {
       method: "POST",
@@ -68,7 +66,7 @@ document.querySelector(".signup-form>form").addEventListener("submit", register)
         password,
         };
 
-        let regurl = "";
+        let regurl = "http://localhost:4500/user/signup";
 
         let res = await fetch(regurl, {
         method: "POST",
@@ -81,7 +79,6 @@ document.querySelector(".signup-form>form").addEventListener("submit", register)
         alert(data.message);
         console.log(data);
 
-        window.location = "login.html";
     } catch (err) {
         console.log(err);
     }
