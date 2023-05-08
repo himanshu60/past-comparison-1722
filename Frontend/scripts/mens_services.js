@@ -1,87 +1,21 @@
-let data=[
-    {
-        name:"Spiky Haircut",
-        image:"https://menshairstyletips.com/wp-content/uploads/2017/10/5-Quiff-with-Waves.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://media6.ppl-media.com/mediafiles/blogs/image_6c98364846.png",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://www.apetogentleman.com/wp-content/uploads/2021/05/bald-fade-buzz-cut.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
 
-    {
-        name:"Spiky Haircut",
-        image:"https://media6.ppl-media.com/mediafiles/blogs/image_6c98364846.png",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://www.apetogentleman.com/wp-content/uploads/2021/05/bald-fade-buzz-cut.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://menshairstyletips.com/wp-content/uploads/2017/10/5-Quiff-with-Waves.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
 
-    {
-        name:"Spiky Haircut",
-        image:"https://www.apetogentleman.com/wp-content/uploads/2021/05/bald-fade-buzz-cut.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://menshairstyletips.com/wp-content/uploads/2017/10/5-Quiff-with-Waves.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://media6.ppl-media.com/mediafiles/blogs/image_6c98364846.png",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://menshairstyletips.com/wp-content/uploads/2017/10/5-Quiff-with-Waves.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://media6.ppl-media.com/mediafiles/blogs/image_6c98364846.png",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    {
-        name:"Spiky Haircut",
-        image:"https://www.apetogentleman.com/wp-content/uploads/2021/05/bald-fade-buzz-cut.jpg",
-        price:125,
-        description:"A popular haircut that involes using hair gel or wax to create a spiky look on top, while keeping the sides and back shorter"
-    },
-    
-]
+    let baseurl="http://localhost:4500"
+    let arr
+    fetchdata()
 
-async function fetching(){
-    let res=await fetch("");
-    res.then((res)=>{})
-}
+    async function fetchdata(){
+        try{
+            let res  = await fetch(`${baseurl}/styles/male`)
+            data = await res.json()
+            arr=data
+            renderCard(arr)
+        }
+            catch(err){
+            console.log(err)
+        }
+    }
 
-renderCard(data)
 
 function renderCard(data){
 

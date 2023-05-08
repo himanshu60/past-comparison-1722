@@ -1,0 +1,163 @@
+
+[
+  
+   {
+        "name":"Crew Cut",
+        "image":"https://haircutinspiration.com/wp-content/uploads/2022/08/Crew-Cut-adn-Low-Fade.jpg",
+        "price":140,
+         "gender": "Male" ,
+        "description":"The buzz cut is a very short hairstyle that is typically achieved with electric clippers. It is low maintenance and easy to style."
+    },
+   {
+        "name":"Quiff Cut",
+        "image":"https://content.latest-hairstyles.com/wp-content/uploads/barber-approved-1950s-quiff-style.jpg",
+        "price":170,
+         "gender": "Male" ,
+        "description":"The quiff is a stylish men's hairstyle that features short hair on the sides and longer hair on top that is styled upward and back."
+    },
+   {
+        "name":"Side Part",
+        "image":"https://hairmanz.com/wp-content/uploads/2021/03/side-part-haircut-57.jpg",
+        "price":160,
+         "gender": "Male" ,
+        "description":"The side part is a classic men's hairstyle that features a deep part on one side of the head and longer hair on top that is styled to the side."
+    },
+   {
+        "name":"High Top Fade",
+        "image":"https://i.pinimg.com/originals/39/f5/08/39f5084d1346b6864ed8f9cff016af8f.jpg",
+        "price":200,
+         "gender": "Male" ,
+        "description":"The high top fade is a bold men's hairstyle that features short hair on the sides and a high, flat top on the crown of the head."
+    },
+   {
+        "name":"Slicked Back Hair",
+        "image":"https://i.pinimg.com/564x/4d/e1/9b/4de19b1d57e5f036fee8cc09d9221687.jpg",
+        "price":210,
+         "gender": "Male" ,
+        "description":"Slicked back hair is a sleek and sophisticated men's hairstyle that features longer hair on top that is combed back and held in place with hair product."
+    },
+   {
+        "name":"Textured Crop",
+        "image":"https://hairmanz.com/wp-content/uploads/2021/02/textured-crop-haircuts-textured-hairstyles-15.jpg",
+        "price":190,
+         "gender": "Male" ,
+        "description":"The textured crop is a modern men's hairstyle that features short hair on the sides and longer hair on top that is textured and styled forward."
+    },
+   {
+        "name":"Ivy League cut",
+        "image":"https://i.pinimg.com/originals/b5/14/6a/b5146af6b62555a09b8bb7201902ad02.jpg",
+        "price":145,
+         "gender": "Male" ,
+        "description":"The Ivy League is a classic men's hairstyle that features short hair on the sides and longer hair on top that is styled into a side part."
+    },
+   {
+        "name":"Caesar Cut",
+        "image":"https://content.latest-hairstyles.com/wp-content/uploads/george-clooney-inspired-caesar.jpg",
+        "price":175,
+         "gender": "Male" ,
+        "description":"The Caesar cut is a stylish men's hairstyle that features short hair all over the head with a slightly longer fringe in the front."
+    },
+    {
+        "name":"Buzz Cut",
+        "image":"https://content.latest-hairstyles.com/wp-content/uploads/fresh-skin-faded-buzz-cut-for-men.jpg",
+        "price":150,
+         "gender": "Male" ,
+        "description":"The buzz cut is a very short hairstyle that is typically achieved with electric clippers. It is low maintenance and easy to style."
+    },
+    {
+        "name":"Fade Haircut",
+        "image":"https://menshaircuts.com/wp-content/uploads/2022/11/types-of-haircuts-for-men-fade-messy-top.jpg",
+        "price":150,
+         "gender": "Male" ,
+        "description":"If we had to name the most popular types of cuts for men, a fade haircut would definitely be on top of the list. Its versatility allows you to match the type of fade to your preferences, hair type and, importantly, face shape. High or low, bald or tapered, the variety of options is endless."
+    },
+    {
+        "name":"Taper Haircut",
+        "image":"https://menshaircuts.com/wp-content/uploads/2022/11/types-of-haircuts-for-men-short-taper-brushed-up.jpg",
+        "price":180,
+         "gender": "Male" ,
+        "description":"A taper haircut works well with the majority of mens hair cut styles. It keeps the hair on the sides neatly trimmed while drawing attention to the top. So, you are free to choose any style, be it a simple Ivy League or a more elaborate pompadour. The type of taper can vary too, depending on your preferences and style."
+    },
+    {
+        "name":"Long Top Short Sides",
+        "image":"https://menshaircuts.com/wp-content/uploads/2022/11/types-of-haircuts-for-men-long-top-short-sides-highlights.jpg",
+        "price":175,
+         "gender": "Male" ,
+        "description":"A long top short sides is one of those types of hairstyles for men that will never go out of fashion. This is a timeless classic that looks appropriate in absolutely any ambiance. Besides, it can be pulled off on any hair type and looks flattering on all face shapes."
+    },
+    {
+        "name":"Flow Haircut",
+        "image":"https://menshaircuts.com/wp-content/uploads/2022/11/types-of-haircuts-for-men-medium-flow-1.jpg",
+        "price":175,
+         "gender": "Male" ,
+        "description":"A flow is all about volume and movement. It adds an effortless and relaxed feel to your look. To get it, your locks should be layered cut so that they remain airy and structured. In case your hair naturally does not have enough volume, you may want to employ a hair dryer after the shower."
+    },
+    
+
+
+    {
+        "name":"Bob cut",
+        "image":"https://www.southernliving.com/thmb/glI_N2LqHco-VR90Mlm44t8RmHA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/razor-sharp-1fbb2ccd869444afaed28a98ed47b122.jpg",
+        "price":350,
+         "gender": "Female" ,
+        "description":"A bob is a short haircut that is typically chin-length or shorter. It is a classic and timeless style that can be customized with different lengths and textures."
+    },
+    {
+        "name":"Pixie cut",
+        "image":"https://www.latest-hairstyles.com/wp-content/uploads/long-pixie-cuts.jpg",
+        "price":370,
+         "gender": "Female" ,
+        "description":"A pixie is a very short haircut that is typically cropped close to the scalp. It is a low-maintenance style that can be edgy and bold, or soft and feminine depending on the cut and styling."
+    },
+    {
+        "name":"Layered Cut",
+        "image":"https://content.latest-hairstyles.com/wp-content/uploads/layered-haircuts-with-bangs-1200x900.jpg",
+        "price":450,
+         "gender": "Female" ,
+        "description":"A layered cut is a haircut where the hair is cut into layers of different lengths. It adds texture and movement to the hair and can be customized to many different lengths and styles."
+    },
+    {
+        "name":"Lob cut",
+        "image":"https://cdn2.fabbon.com/uploads/image/file/21479/Sassy_Long_Bob.jpg",
+        "price":500,
+         "gender": "Female" ,
+        "description":" A lob is a longer version of a bob, typically shoulder-length or slightly longer. It is a versatile and easy-to-style haircut that can be customized with layers, bangs, or texture."
+    },
+    {
+        "name":"Bangs cut",
+        "image":"https://content.latest-hairstyles.com/wp-content/uploads/super-short-cropped-cut-with-fringe-bangs.jpg",
+        "price":250,
+         "gender": "Female" ,
+        "description":"Bangs are a hairstyle where the hair is cut shorter in the front and styled to frame the face. They can be customized with different lengths, thickness, and textures to create a variety of looks."
+    },
+    {
+        "name":"Wavy Haircut",
+        "image":"https://www.latest-hairstyles.com/wp-content/uploads/short-haircuts-for-thick-wavy-hair.jpg",
+        "price":300,
+         "gender": "Female" ,
+        "description":"Wavy hair is a hairstyle where the hair is naturally or artificially wavy or curly. It can be styled with layers or texture to create a variety of looks, from beachy waves to glamorous curls."
+    },
+    {
+        "name":"Straight Haircut",
+        "image":"https://content.latest-hairstyles.com/wp-content/uploads/medium-blonde-blunt-cut.jpg",
+        "price":320,
+         "gender": "Female" ,
+        "description":"Straight hair is a hairstyle where the hair is naturally or artificially straight. It can be customized with different lengths, layers, and textures to create a variety of sleek and sophisticated looks."
+    },
+    {
+        "name":"Updo cut",
+        "image":"https://i.pinimg.com/564x/be/2b/fe/be2bfe8730b898de1ef1adcc88151df7.jpg",
+        "price":750,
+         "gender": "Female" ,
+        "description":"An updo is a hairstyle where the hair is styled up and away from the face and neck. It can be customized with braids, twists, curls, or other embellishments to create a variety of elegant and formal looks."
+    },
+    {
+        "name":"Ponytail",
+        "image":"https://www.southernliving.com/thmb/1BqPudwxybs6VbNPjFKzxAoj68g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/perky-f6730811dace4c5694cc35fb3fbb4b96.jpg",
+        "price":270,
+         "gender": "Female" ,
+        "description":"A ponytail is a hairstyle where the hair is gathered and secured at the back of the head with an elastic band. It is a simple and versatile style that can be dressed up or down."
+    }
+
+
+]

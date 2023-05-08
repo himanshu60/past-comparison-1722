@@ -6,7 +6,7 @@
 }
 body {
     background-color: #f0f0f0;
-    background-image: url('https://im.whatshot.in/img/2021/Jul/istock-1030251504-cropped-1626177953.jpg');
+    background-image: url('https://www.nerdwallet.com/assets/blog/wp-content/uploads/2017/10/GettyImages-947995974-1920x1080.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -50,8 +50,8 @@ height : 350px;
 
 .container .card .image {
 position : relative;
-width : 250px;
-height : 250px;
+width : 230px;
+height : 230px;
 top : -40%;
 left: 8px;
 box-shadow : 0 5px 20px rgba(0,0,0,0.2);
