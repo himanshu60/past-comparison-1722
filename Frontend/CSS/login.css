@@ -43,10 +43,10 @@ z-index: 98;
 transition: all 1s ease;
 transform-origin: left;
 transform-style: preserve-3d;
-filter: grayscale(100%);
+background-color: rgb(188, 188, 188);
 }
 .container .cover:hover{
-
+opacity: 10%;
 filter: grayscale(0%);
 }
 
