@@ -102,7 +102,7 @@
 
     async function update() {
 
-        let res = await fetch("http://localhost:4500/user")
+        let res = await fetch("http://localhost:4500/user/get")
         let data = await res.json();
         display(data);
         console.log(data);
