@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/viewAppointment.css">
+    <title>View Appointment</title>
+  </head>
+  <body>
+    <div>
+      <nav></nav>
+      <section>
+        <div id="render">
+            <!-- Data render here -->
+        </div>
+      </section>
+    </div>
+  </body>
+  <script>
+    async function f(){
+        await fetch(`http://localhost:1111/bookedAppointment/`, {
+            method: "GET",
+            headers: {"Content-type": "application/json"}
+        })
+        .then((res)=> res.json())
+        .then((data)=>{
+            display(data)
+        })
+    }
+
+    function display(data){
+        document.getElementById("render").innerHTML = null;
+        data.forEach(element => {
+            let appointment_cards = document.createElement("div")
+            appointment_cards.setAttribute("class", "appointment_cards")
+            
+            let img_div = document.createElement("div")
+            
+            let pImg = document.createElement("img")
+            pImg.setAttribute("class", element.image)
+            pImg.setAttribute("alt", "Not Found")
+
+            img_div.append(pImg)
+
+            let pName = document.createElement("h3")
+            pName.setAttribute("class", "pName")
+            pName.innerHTML = element.name;
+
+            let pPrice = document.createElement("p")
+            pPrice.setAttribute("class", "pPrice")
+            pPrice.innerHTML = element.price;
+
+            let pDesc = document.createElement("p")
+            pDesc.setAttribute("class", "pDesc")
+            pDesc.innerHTML = element.description;
+
+            let pDate = document.createElement("p")
+            pDate.setAttribute("class", "pDate")
+            pDate.innerHTML = element.date;
+
+            let pTime = document.createElement("p")
+            pTime.setAttribute("class", "pTime")
+            pTime.innerHTML = element.time;
+
+            let styler = document.createElement("h3")
+            styler.setAttribute("class", "stylerName")
+            styler.innerHTML = element.stylerName;
+            
+            let cancelBtn = document.createElement("button")
+            cancelBtn.innerHTML = "Cancel";
+            cancelBtn.addEventListener("click", async()=>{
+                await fetch(`http://localhost:1111/bookedAppointment/remove/${element.id}`,{
+                    method: "DELETE", 
+                    headers: {"Content-type": "application/json"}
+                })
+                .then((res)=> res.json())
+                .then((message)=>{
+                    console.log(message)
+                    window.location.href = '../index.html'
+                })
+            })
+
+            appointment_cards.append(img_div, pName, pPrice, pDesc, pDate, pTime, styler)
+            document.getElementById("render").append(appointment_cards)
+        });
+    }
+  </script>
+</html>
