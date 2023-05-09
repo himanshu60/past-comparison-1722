@@ -82,7 +82,7 @@
             let cancelBtn = document.createElement("button")
             cancelBtn.innerHTML = "Cancel";
             cancelBtn.addEventListener("click", async()=>{
-                await fetch(`http://localhost:4500/Appointment/delete/${element._id}`,{
+                await fetch(`https://clumsy-dove-tunic.cyclic.app/Appointment/delete/${element._id}`,{
                     method: "DELETE", 
                     headers: {"Content-type": "application/json"}
                 })
