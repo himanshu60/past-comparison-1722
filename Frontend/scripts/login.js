@@ -15,7 +15,7 @@ async function login(event) {
     };
 
 
-    let logurl = `http://localhost:4500/user/login`;
+    let logurl = `https://clumsy-dove-tunic.cyclic.app/user/login`;
 
     let res = await fetch(logurl, {
       method: "POST",
@@ -66,7 +66,7 @@ document.querySelector(".signup-form>form").addEventListener("submit", register)
         password,
         };
 
-        let regurl = "http://localhost:4500/user/signup";
+        let regurl = "https://clumsy-dove-tunic.cyclic.app/user/signup";
 
         let res = await fetch(regurl, {
         method: "POST",
