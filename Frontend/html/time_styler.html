@@ -9,11 +9,11 @@
   </head>
   <body>
     <div id="root">
-      <div className="App">
-        <header className="App-header">
+      <div class="App">
+        <header class="App-header">
             <!-- Nav -->
 
-            <div className="Time_Style_main">
+            <div class="Time_Style_main">
                 <!-- <div className="time_1st">
                   <video
                     class="standard"
@@ -24,9 +24,9 @@
                     type="video/mp4"
                   ></video>
                 </div> -->
-                <div className="Time_Style_page">
-                  <div className="wid90">
-                    <div className="white">
+                <div class="Time_Style_page">
+                  <div class="wid90">
+                    <div class="white">
                       <div>
                         <h1 id="ab"></h1>
                         <input type="text" id="Barber" placeholder="Styler Name" />
@@ -54,7 +54,7 @@
                       </div>
                       <button id="bookBtn">Book Appointment</button>
                     </div>
-                    <div id="styler_cards" className="inside_wid90">
+                    <div id="styler_cards" class="inside_wid90">
                       <!-- Data to append -->
                     </div>
                   </div>
@@ -134,7 +134,8 @@
         barber_img_div.setAttribute("class", "barber_img_div")
 
         let eImg = document.createElement("img");
-        eImg.setAttribute("src", `${ele.imgage}`);
+        eImg.setAttribute("src", `${ele.image}`);
+        eImg.setAttribute("class", `img`);
         eImg.setAttribute("alt", `Not Found`)
         barber_img_div.append(eImg);
 
@@ -175,22 +176,25 @@
         alert("Please select your Time");
         return;
       } else {
+        let stylesID=JSON.parse(localStorage.getItem("style_id"))
+
         let obj = {
             stylerName: barberName,
             time: time,
             date: date,
+            stylesID
           }
-        await fetch(`http://localhost:1111/`, {
+        await fetch(`http://localhost:4500/appointment`, {
           headers: { "Content-type": "application/json"}
         })
           .then((res) => res.json())
           .then((data) => console.log(data));
 
-        await fetch(`http://localhost:1111/appointment/`)
+        await fetch(`http://localhost:4500/appointment/`)
         .then((res)=> res.json())
         .then((data)=> console.log(data))
 
-        await fetch(`http://localhost:1111/appointment/add`, {
+        await fetch(`http://localhost:4500/appointment/add`, {
           method: "POST",
           headers: {  "Content-type": "application/json" },
           body: JSON.stringify(obj)
