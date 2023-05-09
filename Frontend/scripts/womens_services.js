@@ -55,7 +55,7 @@ data.forEach(ele => {
     button.addEventListener("click",function(e){
         localStorage.setItem("style_id", JSON.stringify(ele._id));
         console.log(ele._id);
-        // window.location=""
+        window.location="./time_styler.html"
     })    
 
     imagediv.append(img)

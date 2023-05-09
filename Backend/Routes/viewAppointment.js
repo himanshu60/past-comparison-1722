@@ -1,6 +1,6 @@
 const express = require("express")
 
-const {Appointment} = require('../models/appointment.model')
+const {Appointment} = require('../Model/appointment.model')
 const appointmentRouter = express.Router()
 
 appointmentRouter.get("/", async(req,res)=>{
@@ -21,9 +21,19 @@ appointmentRouter.post("/add", async(req,res)=>{
         res.send({d: "HDLAH", msg: payload});
     } catch (error) {
         console.log(error.message);
-        ews.send({msg: "Something went wrong", err: error.message})
+        res.send({msg: "Something went wrong", err: error.message})
     }
 })
 
+appointmentRouter.delete("/delete/:id", async (req, res) => {
+    const id = req.params.id;
+    try {
+      const deleteduser = await Appointment.findByIdAndRemove({ _id: id });
+      res.send(deleteduser);
+      console.log(deleteduser);
+    } catch (err) {
+      res.send({ status: err.message });
+    }
+  });
 
 module.exports = {appointmentRouter}

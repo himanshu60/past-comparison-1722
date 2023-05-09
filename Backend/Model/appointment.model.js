@@ -9,11 +9,11 @@ const appointmentSchema = new Schema({
     date: {type: String},
     stylerName: {type: String, required: true},
     time: {type: String},
-    // stylesID: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "styles",
-    //     required: true
-    // }
+    stylesID: {
+        type: String,
+        ref: "styles",
+        required: true
+    }
 })
 
 const Appointment = mongoose.model("appointment", appointmentSchema)

@@ -11,6 +11,7 @@ const { userRouter } = require("./Routes/Users.Router");
 const { authenticate } = require("./Middleware/authentication.middleware")
 
 const { styleRouter } = require("./Routes/Style.Router");
+const { appointmentRouter } = require("./Routes/viewAppointment");
 
 
 
@@ -30,6 +31,7 @@ app.get("/", (req, res) => res.send(`welcome`));
 // --------------->>>>>>>> Routers <<<<<<<<-------------------
 
 app.use("/user", userRouter);
+app.use("/Appointment", appointmentRouter);
 
 app.use("/styles", styleRouter);
 
