@@ -50,9 +50,16 @@
 }
 .nav div.logo a img {
   background-color: #000000e9;
-  border-radius: 65%;
-  height: 65px;
-  width: 180px;
+  border-radius: 28%;
+  height: 60px;
+  width: 170px;
+
+}
+
+.nav div.logo a img:hover {
+  background-color: white;
+  color: aliceblue;
+ 
 
 }
 
@@ -86,13 +93,14 @@
 
 .nav div.main_list ul li a {
   text-decoration: none;
-  color: black;
+  color: white;
   line-height: 65px;
   font-size: 1rem;
-  border-radius: 60%;
-  background-color: rgb(171,163,163);
+  border-radius: 5;
+  background-color: black;
+
   padding: 15px;
-  margin: 20px;
+  margin: 4px;
 }
 
 .nav div.main_list ul li a:hover {
