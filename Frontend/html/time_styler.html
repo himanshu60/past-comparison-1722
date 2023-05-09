@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/time_styler.css" />
+    <title>Time & Styler</title>
+  </head>
+  <body>
+    <div id="root">
+      <div className="App">
+        <header className="App-header">
+            <!-- Nav -->
+
+            <div className="Time_Style_main">
+                <!-- <div className="time_1st">
+                  <video
+                    class="standard"
+                    autoplay="true"
+                    muted
+                    loop
+                    src="https://www.zoylee.com/assets/video/home-video/banner-video.mp4"
+                    type="video/mp4"
+                  ></video>
+                </div> -->
+                <div className="Time_Style_page">
+                  <div className="wid90">
+                    <div className="white">
+                      <div>
+                        <h1 id="ab"></h1>
+                        <input type="text" id="Barber" placeholder="Styler Name" />
+                        <input type="date" id="date" />
+                        <select name="" id="time">
+                          <option value="#" id="dull">Select Your Time Slot</option>
+                          <option value="10:00 AM">10:00 AM &nbsp;- Not Available</option>
+                          <option value="10:30 AM">10:30 AM &nbsp;- Available</option>
+                          <option value="11:00 AM">11:00 AM &nbsp;- Available</option>
+                          <option value="11:30 AM">11:30 AM &nbsp;- Available</option>
+                          <option value="12:00 PM">12:00 PM &nbsp;- Available</option>
+                          <option value="12:30 PM">12:30 PM &nbsp;- Not Available</option>
+                          <option value="13:00 PM">13:00 PM &nbsp;- Not Available</option>
+                          <option value="13:30 PM">13:30 PM &nbsp;- Not Available</option>
+                          <option value="14:00 PM">14:00 PM &nbsp;- Not Available</option>
+                          <option value="14:30 PM">14:30 PM &nbsp;- Available</option>
+                          <option value="15:00 PM">15:00 PM &nbsp;- Available</option>
+                          <option value="15:30 PM">15:30 PM &nbsp;- Available</option>
+                          <option value="16:00 PM">16:00 PM &nbsp;- Available</option>
+                          <option value="16:30 PM">16:30 PM &nbsp;- Available</option>
+                          <option value="17:00 PM">17:00 PM &nbsp;- Available</option>
+                          <option value="17:30 PM">17:30 PM &nbsp;- Available</option>
+                          <option value="18:00 PM">18:00 PM &nbsp;- Available</option>
+                        </select>
+                      </div>
+                      <button id="bookBtn">Book Appointment</button>
+                    </div>
+                    <div id="styler_cards" className="inside_wid90">
+                      <!-- Data to append -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </header>
+      </div>
+    </div>
+  </body>
+  <script>
+
+    const data = [
+      {
+        id: 1,
+        image: "https://media.istockphoto.com/id/853924196/photo/female-hairdresser-standing-in-salon.jpg?s=612x612&w=0&k=20&c=8GS188J48RXiAVZamkZKnOd3Xtyhw10skY_1tRkboTE=",
+        name: "Nicole White"
+        // name: "John Abraham",
+      },
+      {
+        id: 2,
+        image: "https://media.istockphoto.com/id/511777075/photo/teacher-helping-students-training-to-become-hairdressers.jpg?s=612x612&w=0&k=20&c=o1adWObcvGOzxyVxLpw1vfk-7Aav-WAipygsQnWHUhI=",
+        name: "Jesica Loren"
+        // name: "Bruce Willis",
+      },
+      {
+        id: 3,
+        image: "https://media.istockphoto.com/id/1206174016/photo/smile-of-the-professional.jpg?s=612x612&w=0&k=20&c=SSrrFne1Fw_PSh3nj9P4gRx0gxfjP9mKYx-KQ2Cxu-I=",
+        name: "Wilsey Say"
+        // name: "Henry Cavill",
+      },
+      {
+        id: 4,
+        image: "https://media.istockphoto.com/id/1136599956/photo/portret-of-smiling-hairdresser-in-beauty-salon-beautiful-woman-in-black-apron-looking-at.jpg?s=612x612&w=0&k=20&c=McIY0gBFGTWl5Da0DuJ01IV6syPF8KWstOQK1Ltevd4=",
+        name: "Adhuna Bhabani",
+      },
+      {
+        id: 5,
+        image: "https://media.istockphoto.com/id/1086525412/photo/smiling-young-hairstylist-combing-and-drying-hair-to-happy-young-woman-in-beauty-salon.jpg?s=612x612&w=0&k=20&c=M_xDl_VoLByBWzyXnI6YmsmhMjlIp4DQjF_jjI1P520=",
+        name: "Henry Cavill"
+        // name: "Dilshad Pastakia",
+      },
+      {
+        id: 6,
+        image: "https://media.istockphoto.com/id/1365608023/photo/shot-of-a-handsome-young-barber-standing-alone-in-his-salon.jpg?s=612x612&w=0&k=20&c=0l2Q3UVgXNnf3lbUvMM7hT18-AAnOloeoNMOHntomcw=",
+        name: "Hukuka Miles"
+        // name: "Jawed Habib",
+      },
+      // {
+      //   id: 7,
+      //   img: "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&w=600",
+      //   name: "abc",
+      // },
+      // {
+      //   id: 8,
+      //   img: "https://images.unsplash.com/photo-1523278669709-c05da80b6a65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGJlYXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      //   name: "EFG",
+      // },
+    ];
+
+    display(data); // for practice data
+
+    // async function dataFetch() {
+    //   await fetch(`http://localhost:1111/appointment`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       display(data);
+    //     });
+    // }
+
+    function display(data) {
+      document.getElementById("styler_cards").innerHTML = null;
+      data.forEach((ele) => {
+        let barber_card = document.createElement("div");
+        barber_card.setAttribute("class", "barber_card");
+
+        let barber_img_div = document.createElement("div");
+        barber_img_div.setAttribute("class", "barber_img_div")
+
+        let eImg = document.createElement("img");
+        eImg.setAttribute("src", `${ele.imgage}`);
+        eImg.setAttribute("alt", `Not Found`)
+        barber_img_div.append(eImg);
+
+        let eName = document.createElement("p");
+        eName.innerHTML = ele.name;
+
+        let btn = document.createElement("button");
+        btn.innerHTML = "SELECT";
+        btn.addEventListener("click", () => {
+          document.getElementById("Barber").value = ele.name;
+          return;
+        });
+
+        barber_card.append(barber_img_div, eName, btn);
+
+        document.getElementById("styler_cards").append(barber_card);
+      });
+    }
+
+    let bookBtn = document.getElementById("bookBtn")
+    bookBtn.addEventListener("click", async()=>{
+
+      let time = document.getElementById("time").value;
+      let barberName = document.getElementById("Barber").value;
+      let date = document.getElementById("date").value
+      
+      if (time == "" && barberName == "") {
+        alert("Please select your Date, Time & your Barber");
+        return;
+        // console.log(time);
+      } else if (barberName == "") {
+        alert("Please select Barber");
+        return;
+      } else if (date == "") {
+        alert("Please select your Date");
+        return;
+      } else if (time == "#") {
+        alert("Please select your Time");
+        return;
+      } else {
+        let obj = {
+            stylerName: barberName,
+            time: time,
+            date: date,
+          }
+        await fetch(`http://localhost:1111/`, {
+          headers: { "Content-type": "application/json"}
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+
+        await fetch(`http://localhost:1111/appointment/`)
+        .then((res)=> res.json())
+        .then((data)=> console.log(data))
+
+        await fetch(`http://localhost:1111/appointment/add`, {
+          method: "POST",
+          headers: {  "Content-type": "application/json" },
+          body: JSON.stringify(obj)
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            
+
+            window.location.href = './viewAppointment.html'
+          });
+        // console.log(barberName, date, time);
+      }
+    })
+  </script>
+</html>
