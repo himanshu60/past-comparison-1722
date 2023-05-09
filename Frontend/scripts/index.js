@@ -5,11 +5,13 @@ import { Navbar } from "../components/Navbar.js";
 // import Footer from "../components/Footer.js";
 
 window.onload = () => {
-  document.getElementById("nav-logo").src = "./images/second.jpg";
-  document.getElementById("logo-href").href = "index.html";
-  document.getElementById("bookhref").href = "./html/gender.html";
-  document.getElementById("viewhref").href = "./html/appointment.html";
-  document.getElementById("contacthref").href = "../index.html";
+  document.getElementById("nav-logo").src = "./images/locks & look (1).png";
+  document.getElementById("logo-href").href = "./index.html";
+  document.getElementById("bookhref").href = "./html/Mens_Services.html";
+  document.getElementById("bookhref1").href = "./html/women_services.html";
+  document.getElementById("viewhref").href = "./html/viewAppointment.html";
+  document.getElementById("contacthref").href = "./admin-page/admin.html";
+  document.getElementById("loginhref").href = "./html/login.html";
 };
 
 let nav = document.getElementById("NAVBAR");

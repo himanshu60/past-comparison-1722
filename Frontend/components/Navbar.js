@@ -9,9 +9,10 @@ let Navbar = () => {
       </div>
       <div id="mainListDiv" class="main_list">
         <ul id="navlinks" class="navlinks">
-          <li><a id="bookhref" href="#">Book Appointment</a></li>
+          <li><a id="bookhref" href="#">Men's Appointment</a></li>
+          <li><a id="bookhref1" href="#">Women's Appointment</a></li>
           <li><a id="viewhref" href="#"> View Appointment</a></li>
-          <li><a id="contacthref" href="#">Contact US</a></li>
+          <li><a id="contacthref" href="#">Admin Panel</a></li>
           <li><a id="loginhref" href="#">Login</a></li>
         </ul>
       </div>
