@@ -2,7 +2,7 @@
 /*                     copy this to get navbar and footer                     */
 /* -------------------------------------------------------------------------- */
 import { Navbar } from "../components/Navbar.js";
-// import Footer from "../components/Footer.js";
+// // import Footer from "../components/Footer.js";
 
 window.onload = () => {
   document.getElementById("nav-logo").src = "./images/locks & look (1).png";
@@ -173,6 +173,6 @@ if (data) {
 }
 
 // provide login page an href
-if(loginstat && loginstat.innerText == "Login"){
-  loginstat.href = "./routes/loginSignup/login.html"
-}
+// if(loginstat && loginstat.innerText == "Login"){
+//   loginstat.href = "./routes/loginSignup/login.html"
+// }
