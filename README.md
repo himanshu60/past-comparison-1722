@@ -1,6 +1,4 @@
-<p  align="center">
-<img src="#" alt="Image" style="width: 20%; border-radius:50%">
-</p>
+## `Locks & Looks`
 
 ## Project Code :  
    ```
@@ -157,12 +155,22 @@ Locks & Looks
         PATCH  -   /appointments/appointment/update/:id
         DELETE -   /appointments/appointment/delete/:id
 
-# screenshots
+## Home Page
 
 ![Screenshot (30)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/018c6410-f64b-4ecf-8d18-ea92053672f9)
+
+## SignUp Page
 ![Screenshot (36)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/59267581-8d57-43ef-adf7-2a0714a42465)
+
+## Login Page
 ![Screenshot (34)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/7faeb95d-d976-4f26-8887-58c0e867a7b5)
+
+## Women Appoinment Page
 ![Screenshot (32)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/caffd5f2-07fd-4d85-828c-fe0485a49bf9)
+
+## Men Appoinment Page
 ![Screenshot (31)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/f2c58503-cab2-4a08-a1e0-5b81b2efc7cf)
+
+## View Appoinment Page
 ![Screenshot (33)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/a7d2c304-b22a-4343-9464-6651d2b2db95)
 
