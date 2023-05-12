@@ -159,9 +159,10 @@ Locks & Looks
 
 # screenshots
 
-![Screenshot (572)](![Screenshot (30)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/018c6410-f64b-4ecf-8d18-ea92053672f9)
-)
-![Screenshot (574)]()
-![Screenshot (575)]()
-![Screenshot (576)]()
-![Screenshot (577)]()
+![Screenshot (30)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/018c6410-f64b-4ecf-8d18-ea92053672f9)
+![Screenshot (36)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/59267581-8d57-43ef-adf7-2a0714a42465)
+![Screenshot (34)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/7faeb95d-d976-4f26-8887-58c0e867a7b5)
+![Screenshot (32)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/caffd5f2-07fd-4d85-828c-fe0485a49bf9)
+![Screenshot (31)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/f2c58503-cab2-4a08-a1e0-5b81b2efc7cf)
+![Screenshot (33)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/a7d2c304-b22a-4343-9464-6651d2b2db95)
+
