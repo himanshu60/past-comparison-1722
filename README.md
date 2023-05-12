@@ -1,5 +1,5 @@
 <p  align="center">
-<img src="C:\Users\DELL\Desktop\Loocks & Looks (1).jpg" alt="Image" style="width: 20%; border-radius:50%">
+<img src="#" alt="Image" style="width: 20%; border-radius:50%">
 </p>
 
 ## Project Code :  
@@ -159,8 +159,9 @@ Locks & Looks
 
 # screenshots
 
-![Screenshot (572)](https://user-images.githubusercontent.com/87657007/230887457-e7d94561-9b0e-4a47-9a83-cae79ae561b1.png)
-![Screenshot (574)](https://user-images.githubusercontent.com/87657007/230887473-4ad81427-a907-408a-a6ba-53846b06e6ba.png)
-![Screenshot (575)](https://user-images.githubusercontent.com/87657007/230887479-1c74c055-4256-4abf-a12f-f2e04b765c25.png)
-![Screenshot (576)](https://user-images.githubusercontent.com/87657007/230887490-b548760e-f5d9-4a1b-838a-f30f595b6928.png)
-![Screenshot (577)](https://user-images.githubusercontent.com/87657007/230896989-737da941-7023-4439-bf72-58f065c09a5e.png)
+![Screenshot (572)](![Screenshot (30)](https://github.com/himanshu60/past-comparison-1722/assets/112817197/018c6410-f64b-4ecf-8d18-ea92053672f9)
+)
+![Screenshot (574)]()
+![Screenshot (575)]()
+![Screenshot (576)]()
+![Screenshot (577)]()
