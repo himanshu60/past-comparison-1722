@@ -1,5 +1,5 @@
 <p  align="center">
-<img src="https://user-images.githubusercontent.com/106810850/229245859-a25d1ba5-34ac-4aff-8897-01edf9c7d41f.jpg" alt="Image" style="width: 20%; border-radius:50%">
+<img src="C:\Users\DELL\Desktop\Loocks & Looks (1).jpg" alt="Image" style="width: 20%; border-radius:50%">
 </p>
 
 ## Project Code :  
@@ -9,7 +9,7 @@
 
 ## Project Name : 
    ```
-   Snips & Spikes
+Locks & Looks
    ```
 
 <br>
@@ -156,13 +156,6 @@
         POST   -   /appointments/appointment/add
         PATCH  -   /appointments/appointment/update/:id
         DELETE -   /appointments/appointment/delete/:id
-
-# Additional 
-- we can give home services
-
-
-
-![Locks&Looks drawio (1)](https://user-images.githubusercontent.com/87657007/228304975-dc21afa6-a2bb-407a-bcd0-fbd1d1baa52c.png)
 
 # screenshots
 
