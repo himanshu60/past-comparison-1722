@@ -3,7 +3,7 @@ const nav = document.getElementById("navbar1");
 nav.innerHTML = navBar;
 const form = document.querySelector("#main>form");
 const productsTable = document.querySelector("#products tbody");
-const base_url = "http://localhost:4500";
+const base_url = "https://clumsy-dove-tunic.cyclic.app";
 const deploy_url = "";
 
 form.addEventListener("submit", async (e) => {

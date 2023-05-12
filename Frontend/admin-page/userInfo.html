@@ -46,9 +46,11 @@
         </div>
         <div class="items">
             <li><i class="fa-solid fa-chart-simple"></i> <a href="./dashboard.html">Dashboard</a></li>
+
             <li><i class="fa-solid fa-circle-info"></i> <a href="./userInfo.html">User-info</a></li>
             <li><i class="fa-solid fa-people-group"></i> <a href="./totalCustomer.html">Block-Customers</a></li>
             <li><i class="fa-solid fa-people-group"></i> <a href="./adminProducts.html">Add-Products</a></li>
+
         </div>
     </section>
 
@@ -77,7 +79,7 @@
                     <table class="table table-bordered" id="crudTable">
                         <thead>
                             <tr>
-                                <th>NAME</th>
+                                <th>Name</th>
 
                                 <th>Email</th>
                                 <!-- <th>Actions</th> -->
@@ -102,7 +104,7 @@
 
     async function update() {
 
-        let res = await fetch("http://localhost:4500/user/get")
+        let res = await fetch("https://clumsy-dove-tunic.cyclic.app/user/get")
         let data = await res.json();
         display(data);
         console.log(data);
