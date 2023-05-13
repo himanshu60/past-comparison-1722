@@ -41,7 +41,7 @@ const authentication = (req, res, next) => {
             }
         });
     } else {
-         res.send(401).send({ message: 'Login Again' })
+         res.status(401).send({ message: 'Login Again' })
          return
     }
 }

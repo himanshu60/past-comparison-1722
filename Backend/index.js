@@ -31,6 +31,7 @@ app.get("/", (req, res) => res.send(`welcome`));
 // --------------->>>>>>>> Routers <<<<<<<<-------------------
 
 app.use("/user", userRouter);
+app.use(authenticate)
 app.use("/Appointment", appointmentRouter);
 
 app.use("/styles", styleRouter);
