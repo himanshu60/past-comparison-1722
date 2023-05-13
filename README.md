@@ -1,15 +1,5 @@
 # Locks & Looks
 
-## Project Code :  
-   ```
-  past-comparison-1722
-   ```
-
-## Project Name : 
-   ```
-   Locks & Looks
-   ```
-
 <br>
 
 ## Deployed Link :
@@ -23,10 +13,11 @@
  - Team Leader:- Himanshu Choudhary
  - Team Mamber:- Ankita Maddheshiya , Asif Patel, Snehashish 
 
+# Site Map for Locks & Looks
 
 
+  ![Hair-salon-Diagram](https://github.com/himanshu60/past-comparison-1722/assets/65457075/38851c03-f298-4769-8d75-15a571db089e)
 
-  
 <br>
 
 # What are the requirements ?
@@ -34,30 +25,20 @@
 - User can login and sign up
 - User can visit pages 
 - User can see services 
-- User can book services / appointments and pay
+- User can book services 
     - User can view appointment 
     - User can cancel appointment
-    - User can book the appointment for someone else.
     - User can give feedback on appointment
-    - User can see account details / update them / get previous appointment  
-    - User will be notified confirmation email 
+    - User can see account details / update them / get previous appointment 
 - Feedback 
 - Logout 
 
+# Teach Stacks:-
+Frontend: HTML | CSS | JavaScript |
 
+Backend: Node.js | Express.js | MongoDB |
 
-# Tech stack 
-
-### Frontend 
-
-- Bootstrap / HTML / CSS / JavaScript /
-
-### Backend 
- 
-- NodeJS 
-- ExpressJS
-
-- Database : MongoDB
+Node Modules: mongoose.js | bcrypt | cors | dotenv | jsonwebtoken | nodemon
 
 
 
@@ -71,7 +52,6 @@
 - stylist 
      - name 
      - email 
-     - salary
      - image
 
 - services 
