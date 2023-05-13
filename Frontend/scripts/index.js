@@ -12,7 +12,10 @@ window.onload = () => {
   document.getElementById("viewhref").href = "./html/viewAppointment.html";
   document.getElementById("contacthref").href = "./admin-page/admin.html";
   document.getElementById("loginhref").href = "./html/login.html";
+
 };
+
+
 
 let nav = document.getElementById("NAVBAR");
 nav.innerHTML = Navbar();

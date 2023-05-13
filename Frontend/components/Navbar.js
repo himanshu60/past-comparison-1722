@@ -27,4 +27,14 @@ let Navbar = () => {
     `;
 };
 
+// async function logout(){
+//   await fetch(`https://clumsy-dove-tunic.cyclic.app/user/logout`)
+//   .then((res)=> res.json())
+//   .then((msg)=> {
+//     alert('Logout success')
+//     console.log(msg)
+//     window.location.href = '../index.html'
+//   })
+// }
+
 export { Navbar };
