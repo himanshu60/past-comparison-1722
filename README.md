@@ -32,19 +32,15 @@
 # What are the requirements ?
 
 - User can login and sign up
-    - OTP will be sent by nodmailer
-- User can login with google account
 - User can visit pages 
 - User can see services 
 - User can book services / appointments and pay
     - User can view appointment 
-    - User rescheduled apointments
     - User can cancel appointment
     - User can book the appointment for someone else.
     - User can give feedback on appointment
     - User can see account details / update them / get previous appointment  
-    - User will be notified confirmationi email 
-- Real time chat support
+    - User will be notified confirmation email 
 - Feedback 
 - Logout 
 
@@ -54,14 +50,14 @@
 
 ### Frontend 
 
-- Bootstrap / HTML / CSS / JavaScript / SweeperJS 
+- Bootstrap / HTML / CSS / JavaScript /
 
 ### Backend 
  
 - NodeJS 
 - ExpressJS
 
-- Database : MongoDB, MySQL 
+- Database : MongoDB
 
 
 
@@ -84,7 +80,6 @@
     - service_price
     - service_description
     - service_category 
-    - service_by_gender
 
 - Slots 
      - id
