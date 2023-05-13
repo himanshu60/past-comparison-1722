@@ -14,8 +14,8 @@
 
 ## Deployed Link :
 
-   - Frontend - https://snipsandspikes.netlify.app/
-   - Backend  - https://hair-salon-backend.onrender.com
+   - Frontend - https://classy-sunburst-efb9f4.netlify.app/;
+  
 
 
 <br>
