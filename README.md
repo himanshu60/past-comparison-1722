@@ -2,11 +2,7 @@
 
 <br>
 
-## Deployed Link :
-
-   - Frontend - https://classy-sunburst-efb9f4.netlify.app/;
-  
-
+## Deployed Link : https://classy-sunburst-efb9f4.netlify.app/;
 
 <br>
 
