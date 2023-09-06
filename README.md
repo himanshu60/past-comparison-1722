@@ -1,5 +1,5 @@
 # Locks & Looks:-
-
+Our hair salon's website is here to help you look amazing! We're experts at making your hair look great. Whether you want a new haircut, a different hair color, or just some relaxation, we can do it all. Check out our services, make an appointment, and get ready to feel fantastic with fabulous hair. We're just a click away!
 <br>
 
 ## Deployed Link : https://classy-sunburst-efb9f4.netlify.app/;
