@@ -77,7 +77,7 @@ async function login(event) {
       password: passwordInput.value,
     };
 
-    let logurl = `http://localhost:4500/user/login`;
+    let logurl = `${API_BASE_URL}/user/login`;
 
     let res = await fetch(logurl, {
       method: "POST",
@@ -167,7 +167,7 @@ async function register(event) {
       password: passwordInput.value,
     };
 
-    let regurl = "http://localhost:4500/user/signup";
+    let regurl = `${API_BASE_URL}/user/signup`;
 
     let res = await fetch(regurl, {
       method: "POST",

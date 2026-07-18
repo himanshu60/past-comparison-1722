@@ -43,6 +43,7 @@
       </section>
     </div>
   </body>
+  <script src="../scripts/api-config.js"></script>
   <script>
 
         function syncNavAuth() {
@@ -65,7 +66,7 @@
         }
 
         syncNavAuth();
-    let baseurl="http://localhost:4500"
+    let baseurl = API_BASE_URL
     let arr
     fetchdata()
 
@@ -127,7 +128,7 @@
             let cancelBtn = document.createElement("button")
             cancelBtn.innerHTML = "Cancel";
             cancelBtn.addEventListener("click", async()=>{
-                await fetch(`http://localhost:4500/Appointment/delete/${element._id}`,{
+                await fetch(`${baseurl}/Appointment/delete/${element._id}`,{
                     method: "DELETE", 
                     headers: {"Content-type": "application/json"}
                 })

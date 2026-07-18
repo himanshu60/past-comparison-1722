@@ -98,13 +98,14 @@
 
 </html>
 
+<script src="../scripts/api-config.js"></script>
 <script>
 
     let tbody = document.getElementById("append");
 
     async function update() {
 
-        let res = await fetch("http://localhost:4500/user/get")
+        let res = await fetch(`${API_BASE_URL}/user/get`)
         let data = await res.json();
         display(data);
         console.log(data);
