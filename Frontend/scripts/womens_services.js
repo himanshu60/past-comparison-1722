@@ -3,7 +3,7 @@ let baseurl = API_BASE_URL;
 let arr = [];
 const container = document.querySelector(".container");
 
-renderNavAuthState('a[href="./login.html"]', { homeHref: "../index.html", loginHref: "./login.html" });
+renderNavAuthState('.nav-login-link', { homeHref: "../index.html", loginHref: "./login.html" });
 fetchdata();
 
 async function fetchdata() {

@@ -28,7 +28,7 @@
               <a href="./viewAppointment.html">View Appointment</a>
           </div>
           <div class="nav_items">
-              <a href="./login.html">Login / Signup</a>
+              <a href="./login.html" class="nav-login-link">Login / Signup</a>
           </div>
           <div class="nav_items">
               <a href="../index.html#contact">Contact</a>
@@ -48,7 +48,7 @@
   <script src="../scripts/nav-auth.js"></script>
   <script>
 
-        renderNavAuthState('a[href="./login.html"]', { homeHref: "../index.html", loginHref: "./login.html" });
+        renderNavAuthState('.nav-login-link', { homeHref: "../index.html", loginHref: "./login.html" });
     let baseurl = API_BASE_URL
     let arr
     fetchdata()

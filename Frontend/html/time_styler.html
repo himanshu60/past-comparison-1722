@@ -30,7 +30,7 @@
               <a href="./viewAppointment.html">View Appointment</a>
           </div>
           <div class="nav_items">
-              <a href="./login.html">Login / Signup</a>
+              <a href="./login.html" class="nav-login-link">Login / Signup</a>
           </div>
           <div class="nav_items">
               <a href="../index.html#contact">Contact</a>
@@ -103,7 +103,7 @@
       document.querySelector(".Time_Style_main").style.display = "none";
     }
 
-    renderNavAuthState('a[href="./login.html"]', { homeHref: "../index.html", loginHref: "./login.html" });
+    renderNavAuthState('.nav-login-link', { homeHref: "../index.html", loginHref: "./login.html" });
 
     const data = [
       {
