@@ -1,67 +1,97 @@
 
+let baseurl = "http://localhost:4500";
+let arr = [];
+const container = document.querySelector(".container");
 
-let baseurl="https://clumsy-dove-tunic.cyclic.app"
-let arr
-fetchdata()
+setupAuthNav();
+fetchdata();
 
-async function fetchdata(){
-    try{
-        let res  = await fetch(`${baseurl}/styles/female`)
-        data = await res.json()
-        arr=data
-        renderCard(arr)
-    }
-        catch(err){
-        console.log(err)
+function setupAuthNav() {
+    const loginLink = document.querySelector('a[href="./login.html"]');
+    if (!loginLink) return;
+
+    const stored = JSON.parse(localStorage.getItem("userdata") || "null");
+    const token = localStorage.getItem("token") || (stored && stored.token);
+
+    if (token) {
+        loginLink.textContent = "Logout";
+        loginLink.href = "#";
+        loginLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            localStorage.removeItem("userdata");
+            localStorage.removeItem("token");
+            window.location.href = "../index.html";
+        });
     }
 }
 
+async function fetchdata() {
+    try {
+        let res = await fetch(`${baseurl}/styles/female`);
+        let data = await res.json();
 
-function renderCard(data){
+        if (!res.ok) {
+            throw new Error(data.message || "Failed to load women's styles");
+        }
 
-document.querySelector(".container").innerHTML=""
+        arr = Array.isArray(data) ? data : [];
+        if (!arr.length) {
+            showMessage("No women's services available right now.");
+            return;
+        }
+        renderCard(arr);
+    } catch (err) {
+        console.log(err);
+        showMessage("Unable to load women's services. Please try again.");
+    }
+}
 
-data.forEach(ele => {
+function showMessage(message) {
+    container.innerHTML = `<p style="color:#fff;text-align:center;padding:20px;">${message}</p>`;
+}
 
-    let card=document.createElement("div")
-    card.setAttribute("class","card")
+function renderCard(data) {
+    container.innerHTML = "";
 
-    let imagediv=document.createElement("div")
-    imagediv.setAttribute("class","image")
+    data.forEach((ele) => {
+        let card = document.createElement("div");
+        card.setAttribute("class", "card");
 
-    let img = document.createElement("img")
-    img.setAttribute("src",ele.image)
-    img.setAttribute("href","#")
+        let imagediv = document.createElement("div");
+        imagediv.setAttribute("class", "image");
 
-    let content=document.createElement("div")
-    content.setAttribute("class","content")
+        let img = document.createElement("img");
+        img.setAttribute("src", ele.image);
+        img.setAttribute("href", "#");
 
-    let name = document.createElement("h3")
-    name.textContent=ele.name
-    name.setAttribute("id",`${ele.name}`)
+        let content = document.createElement("div");
+        content.setAttribute("class", "content");
 
-    let price = document.createElement("p")
-    price.textContent=`Price:₹${ele.price}`
-    price.setAttribute("id",`price`)
+        let name = document.createElement("h3");
+        name.textContent = ele.name;
+        name.setAttribute("id", `${ele.name}`);
 
-    let description = document.createElement("p")
-    description.textContent=ele.description
-    description.setAttribute("class","description")
+        let price = document.createElement("p");
+        price.textContent = `Price:₹${ele.price}`;
+        price.setAttribute("id", `price`);
 
-    let button = document.createElement("button")
-    button.textContent="Book"
-    button.setAttribute("id","Book")
+        let description = document.createElement("p");
+        description.textContent = ele.description;
+        description.setAttribute("class", "description");
 
-    button.addEventListener("click",function(e){
-        localStorage.setItem("style_id", JSON.stringify(ele._id));
-        console.log(ele._id);
-        window.location="./time_styler.html"
-    })    
+        let button = document.createElement("button");
+        button.textContent = "Book";
+        button.setAttribute("id", "Book");
 
-    imagediv.append(img)
-    content.append(name,price,description,button)
-    card.append(imagediv,content)
+        button.addEventListener("click", function () {
+            localStorage.setItem("style_id", JSON.stringify(ele._id));
+            window.location = "./time_styler.html";
+        });
 
-    document.querySelector(".container").append(card)
-});
+        imagediv.append(img);
+        content.append(name, price, description, button);
+        card.append(imagediv, content);
+
+        container.append(card);
+    });
 }

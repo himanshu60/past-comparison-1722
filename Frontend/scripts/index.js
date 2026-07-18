@@ -142,34 +142,37 @@ window.removeEventListener("resize", videoChange);
 
 let loginstat = document.getElementById("loginhref");
 let data = JSON.parse(localStorage.getItem("userdata")) || null;
-if (data) {
-  if (data.message == "Login successfully") {
-    loginstat.innerText = "Logout";
-    if (loginstat.innerText == "Logout") {
-      loginstat.addEventListener("click", () => {
-        Swal.fire({
-          title: "Are you sure?",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Logout!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            localStorage.removeItem("userdata");
-            loginstat.innerText = "Login";
-            Swal.fire("Logout Successfull!").then((res)=>{
-                if(res){
-                    window.location.href = "index.html";
-                }
-            })
+let token = localStorage.getItem("token") || (data && data.token);
+
+if (token) {
+  loginstat.innerText = "Logout";
+  loginstat.href = "#";
+  loginstat.addEventListener("click", (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Logout!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("userdata");
+        localStorage.removeItem("token");
+        loginstat.innerText = "Login";
+        loginstat.href = "./html/login.html";
+        Swal.fire("Logout Successfull!").then((res) => {
+          if (res) {
+            window.location.href = "index.html";
           }
         });
-      });
-    }
-  } else {
-    loginstat.innerText = "Login";
-  }
+      }
+    });
+  });
+} else {
+  loginstat.innerText = "Login";
+  loginstat.href = "./html/login.html";
 }
 
 // provide login page an href

@@ -30,7 +30,7 @@
               <a href="./login.html">Login / Signup</a>
           </div>
           <div class="nav_items">
-              <a href="#">Contact</a>
+              <a href="../index.html#contact">Contact</a>
           </div>
       </div>
   </nav>
@@ -92,6 +92,27 @@
     </div>
   </body>
   <script>
+
+    function syncNavAuth() {
+      const loginLink = document.querySelector('a[href="./login.html"]');
+      if (!loginLink) return;
+
+      const stored = JSON.parse(localStorage.getItem("userdata") || "null");
+      const token = localStorage.getItem("token") || (stored && stored.token);
+
+      if (token) {
+        loginLink.textContent = "Logout";
+        loginLink.href = "#";
+        loginLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          localStorage.removeItem("userdata");
+          localStorage.removeItem("token");
+          window.location.href = "../index.html";
+        });
+      }
+    }
+
+    syncNavAuth();
 
     const data = [
       {
@@ -211,17 +232,7 @@
             date: date,
             stylesID
           }
-        await fetch(`https://clumsy-dove-tunic.cyclic.app/appointment`, {
-          headers: { "Content-type": "application/json"}
-        })
-          .then((res) => res.json())
-          .then((data) => console.log(data));
-
-        await fetch(`https://clumsy-dove-tunic.cyclic.app/appointment/`)
-        .then((res)=> res.json())
-        .then((data)=> console.log(data))
-
-        await fetch(`https://clumsy-dove-tunic.cyclic.app/appointment/add`, {
+        await fetch(`http://localhost:4500/Appointment/add`, {
           method: "POST",
           headers: {  "Content-type": "application/json" },
           body: JSON.stringify(obj)

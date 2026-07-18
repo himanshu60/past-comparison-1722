@@ -15,7 +15,7 @@ async function login(event) {
     };
 
 
-    let logurl = `https://clumsy-dove-tunic.cyclic.app/user/login`;
+    let logurl = `http://localhost:4500/user/login`;
 
     let res = await fetch(logurl, {
       method: "POST",
@@ -26,8 +26,9 @@ async function login(event) {
     });
     let data = await res.json();
     if (res.ok) {
-      // Store the access token in the session storage
-      console.log(data.user)
+      // Store login data matching the shape index.js reads from localStorage
+      const userData = { message: "Login Sucessfull", token: data.token, user: data.user };
+      localStorage.setItem('userdata', JSON.stringify(userData));
       localStorage.setItem('token', data.token);
     //   localStorage.setItem('user', JSON.stringify(data.user));
     //   localStorage.setItem('role', role);
@@ -41,7 +42,7 @@ async function login(event) {
 
   } catch (err) {
     console.log("err", err);
-    alert(data.message);
+    alert("Unable to login right now. Please try again.");
   }
 }
 
@@ -66,7 +67,7 @@ document.querySelector(".signup-form>form").addEventListener("submit", register)
         password,
         };
 
-        let regurl = "https://clumsy-dove-tunic.cyclic.app/user/signup";
+        let regurl = "http://localhost:4500/user/signup";
 
         let res = await fetch(regurl, {
         method: "POST",
@@ -76,7 +77,7 @@ document.querySelector(".signup-form>form").addEventListener("submit", register)
         },
         });
         let data = await res.json();
-        alert(data.message);
+        alert(data.message || "Signup completed");
         console.log(data);
 
     } catch (err) {
