@@ -9,11 +9,9 @@ styleRouter.get("/", async (req, res) => {
   const data = req.query;
   try {
     const style = await StyleModel.find();
-    console.log(style);
     res.send(style);
   } catch (err) {
-    console.log("err");
-    console.log({ msg: "Something went wrong" });
+    res.status(500).send({ msg: "Something went wrong", err: err.message });
   }
 });
 

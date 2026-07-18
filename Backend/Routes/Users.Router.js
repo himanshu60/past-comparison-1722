@@ -93,7 +93,7 @@ userRouter.get("/get", async (req, res, next) => {
     const user = await UserModel.find();
     res.send(user);
   } catch (error) {
-    console.log(error);
+    res.status(500).send({ message: error.message });
   }
 });
 
