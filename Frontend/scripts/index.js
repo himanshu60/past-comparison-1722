@@ -177,6 +177,33 @@ document.getElementById("btn1").addEventListener("click", () => {
 });
 
 /* -------------------------------------------------------------------------- */
+/*                            Contact form feedback                           */
+/* -------------------------------------------------------------------------- */
+// There is no backend endpoint for the contact form, so rather than posting
+// to "#" (which just reloads the page), acknowledge the submission in-page
+// and reset the fields. This is a UI acknowledgment only — nothing is sent.
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+    contactForm.reset();
+    Swal.fire({
+      toast: true,
+      position: "top-end",
+      icon: "success",
+      title: "Thanks! We'll get back to you soon.",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+    });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
 /*                       Reveal-on-scroll + stat counters                     */
 /* -------------------------------------------------------------------------- */
 
