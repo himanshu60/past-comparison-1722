@@ -4,28 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/design-system.css" />
     <link rel="stylesheet" href="./CSS/index.css" />
     <link rel="stylesheet" href="./CSS/navbar.css" />
-    <link rel="stylesheet" href="./CSS/footer.css" />
-    <link rel="stylesheet" href="./CSS/footer2.css">
     <link rel="stylesheet" href="./CSS/contact.css">
-    <link rel="stylesheet" href="./CSS/navvvv.css">
     <link rel="shortcut icon" href="./images/first.jpg" type="image/x-icon" />
-    
+
     <title>Home | Locks & Looks </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./scripts/index.js"></script>
     <script src="https://kit.fontawesome.com/33fa00ec8e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
 
   <body>
- 
-
-
-
     <!-- ----------------------------------------------------------------------- -->
     <!--                                 NAVBAR                                  -->
     <!-- ----------------------------------------------------------------------- -->
@@ -37,16 +29,21 @@
     <!-- ----------------------------------------------------------------------- -->
     <!--                                Section-1                                -->
     <!-- ----------------------------------------------------------------------- -->
-    <div
-      id="section1"
-      style="margin-bottom: -7px; padding: 0; scroll-snap-align: start"
-    >
-      <video id="herovideo" width="100%" height="auto" autoplay loop muted>
-        <!-- <source id="dskvideo"
-          src="https://www.mygreentrends.in/wp-content/uploads/2020/09/Section-1-Video.mp4"
-        />
-        <source id="mobvideo" src="https://www.mygreentrends.in/wp-content/uploads/2020/09/Section-1-Video-Mobile.mp4"> -->
-      </video>
+    <div id="section1">
+      <video id="herovideo" width="100%" height="auto" autoplay loop muted playsinline></video>
+      <div class="hero-overlay">
+        <span class="hero-blob hero-blob--1" aria-hidden="true"></span>
+        <span class="hero-blob hero-blob--2" aria-hidden="true"></span>
+        <span class="hero-blob hero-blob--3" aria-hidden="true"></span>
+        <div class="hero-content">
+          <h1>Transform Your Look, Elevate Your Confidence</h1>
+          <p>
+            Premium hair &amp; styling experiences crafted by certified experts —
+            book your chair in minutes.
+          </p>
+          <a href="#services-teaser" class="hero-cta">Book Your Appointment</a>
+        </div>
+      </div>
     </div>
     <!-- ----------------------------------------------------------------------- -->
     <!--                                Section-1                                -->
@@ -55,7 +52,7 @@
     <!-- ----------------------------------------------------------------------- -->
     <!--                                Section-2                                -->
     <!-- ----------------------------------------------------------------------- -->
-    <div class="css-slider-wrapper">
+    <div class="css-slider-wrapper" id="services-teaser">
       <input
         type="radio"
         name="slider"
@@ -73,20 +70,16 @@
 
       <!-- Slider #1 -->
       <div class="slider slide-1">
-        <img
-        src="https://media.istockphoto.com/id/1373303342/photo/portrait-of-stressed-young-woman-with-bunch-of-fallen-hair-in-hand.jpg?s=612x612&w=0&k=20&c=KxKLEDuEhzznfVszL7_racXCIecmM_TC2BC5gN4pAqo=">
-          <!-- "https://www.mygreentrends.in/wp-content/uploads/2020/09/in1.jpg" -->
-          
-        
         <div class="slider-content">
-          <h2>Join the growth story: Own a Saoln</h2>
+          <div class="slide-icon" aria-hidden="true"><i class="fa-solid fa-scissors"></i></div>
+          <h2>Style That Speaks For You</h2>
           <h4>
-            Professional salon experience delivered by certified skin & hair
-            experts with world-class products.
+            Precision cuts, modern color, and finishing touches from stylists
+            who treat every visit like an occasion.
           </h4>
-          <button type="button" class="buy-now-btn" name="button">
-            Know More
-          </button>
+          <a href="./html/Mens_Services.html" class="buy-now-btn">
+            Explore Men's Services
+          </a>
         </div>
         <div class="number-pagination">
           <span>1</span>
@@ -95,21 +88,16 @@
 
       <!-- Slider #2 -->
       <div class="slider slide-2">
-        <img
-          src="https://img.freepik.com/free-photo/young-man-barbershop-trimming-hair_1303-26254.jpg?w=1060&t=st=1683303966~exp=1683304566~hmac=e1766fb94d612cde0630b95beb0ac582706985e1ffacfc7b180c2c491bd91311">
-          <!-- src="https://www.mygreentrends.in/wp-content/uploads/2020/09/in2.jpg" -->
-          alt=""
-        />
         <div class="slider-content">
-          <h2>Award-winning Salon chain</h2>
+          <div class="slide-icon" aria-hidden="true"><i class="fa-solid fa-spa"></i></div>
+          <h2>Premium Care, Every Time</h2>
           <h4>
-            Tap into the salon industry's growth with our
-            <i>'SIX STEPS TO SUCCESS'</i>
-            that ensures swift and sustainable success
+            From bridal styling to everyday glam — book a chair with stylists
+            trusted by hundreds of happy clients.
           </h4>
-          <button type="button" class="buy-now-btn" name="button">
-            Join Now
-          </button>
+          <a href="./html/women_services.html" class="buy-now-btn">
+            Explore Women's Services
+          </a>
         </div>
         <div class="number-pagination">
           <span>2</span>
@@ -124,11 +112,13 @@
     <!--                                Section-3                                -->
     <!-- ----------------------------------------------------------------------- -->
     <div id="section3">
-      <!-- <img width="100%" height="100%" src="./images/Section_3.png" alt="" /> -->
-      <h1 id="h1" >
-        Transform your look <br>
-        transform your life</h1>
-      <button id="btn1">Join Now</button>
+      <div class="section3-content reveal">
+        <h1 id="h1">
+          Transform your look,<br />
+          transform your life
+        </h1>
+        <button id="btn1">Join Now</button>
+      </div>
     </div>
     <!-- ----------------------------------------------------------------------- -->
     <!--                                Section-3                                -->
@@ -139,46 +129,54 @@
     <!-- ----------------------------------------------------------------------- -->
     <div id="Section4-main">
       <header id="section4">
-        <div class="title">
-          <h1>Locks & Looks</h1>
+        <div class="title reveal">
+          <h1>Why Choose Locks &amp; Looks</h1>
         </div>
-        <div class="content">
-          <p style="word-spacing:  15px; margin: 30px; margin-top: 230px;">
-            A hair salon is a business that offers<br>
-             hair styling and other cosmetic services. <br>
-             Usually, a hair salon will have a team of<br> 
-             hair stylists to provide.<br>
-            The hair stylists are required to be licensed<br>
-             cosmetologists trained as either hair stylists,<br>
-              general cosmetologists, estheticians, barbers, <br>
-              or manicurists. 
+        <div class="content reveal">
+          <p>
+            A hair salon is a business that offers hair styling and other
+            cosmetic services. Our team of licensed cosmetologists — trained
+            as hair stylists, estheticians, and barbers — is here to make
+            every visit feel effortless and premium.
           </p>
         </div>
       </header>
 
       <main id="mainS4">
-        <div class="profile">
-         
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-scissors"></i></div>
+          <h3>Certified Stylists</h3>
+          <p>Every stylist on our team is licensed and trained in the latest cutting and coloring techniques.</p>
         </div>
 
-        <div class="profile">
-          
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3>Premium Products</h3>
+          <p>We use world-class, salon-grade products so your color and style last longer and look better.</p>
         </div>
 
-        <div class="profile">
-        
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Fast, Easy Booking</h3>
+          <p>Pick your service, stylist, and time slot in minutes — no phone calls, no waiting on hold.</p>
         </div>
 
-        <div class="profile">
-         
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+          <h3>Consistently Rated</h3>
+          <p>Our clients keep coming back — and telling their friends — thanks to consistent, quality service.</p>
         </div>
 
-        <div class="profile">
-         
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Personalized Care</h3>
+          <p>Every appointment is tailored to your hair type, style goals, and comfort — never one-size-fits-all.</p>
         </div>
 
-        <div class="profile">
-          
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-spa"></i></div>
+          <h3>Relaxing Experience</h3>
+          <p>From the moment you walk in, our salons are designed to help you unwind and feel pampered.</p>
         </div>
       </main>
     </div>
@@ -187,79 +185,159 @@
     <!-- ----------------------------------------------------------------------- -->
 
     <!-- ----------------------------------------------------------------------- -->
+    <!--                                  Stats                                  -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="section-wrap" id="stats" aria-label="Our numbers">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <span class="stat-number" data-count="500" data-suffix="+">0</span>
+          <p class="stat-label">Happy Clients</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-count="12" data-suffix="">0</span>
+          <p class="stat-label">Expert Stylists</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-count="8" data-suffix="">0</span>
+          <p class="stat-label">Years Experience</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-count="4.9" data-suffix="★">0</span>
+          <p class="stat-label">Average Rating</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                              Testimonials                               -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="section-wrap" id="testimonials" aria-label="Client testimonials">
+      <h2 class="section-heading reveal">What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"Best haircut I've had in years. The booking process was so quick and the stylist really listened to what I wanted."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar" aria-hidden="true">R</span>
+            <div>
+              <div class="testimonial-name">Riya Sharma</div>
+              <div class="testimonial-role">Regular Client</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"The salon experience feels premium from start to finish. Booking online took me less than a minute."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar" aria-hidden="true">A</span>
+            <div>
+              <div class="testimonial-name">Aman Verma</div>
+              <div class="testimonial-role">First-time Visitor</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">"Consistent quality every single visit. My go-to salon for both haircuts and styling before events."</p>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar" aria-hidden="true">P</span>
+            <div>
+              <div class="testimonial-name">Priya Nair</div>
+              <div class="testimonial-role">Regular Client</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                   FAQ                                   -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="section-wrap" id="faq" aria-label="Frequently asked questions">
+      <h2 class="section-heading reveal">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>How do I book an appointment?</summary>
+          <p>Choose Men's or Women's services from the navigation, pick a style, then select your stylist, date, and time on the booking page.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Can I cancel or change my appointment?</summary>
+          <p>Yes — visit "View Appointment" from the navigation to see all your bookings and cancel any of them.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Do I need an account to book?</summary>
+          <p>You'll need to sign up or log in first — it only takes a minute and lets us keep your booking history handy.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What if I don't see an available time slot?</summary>
+          <p>Try a different date or stylist — most days have multiple open slots throughout the morning and afternoon.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
     <!--                                 footer                                  -->
     <!-- ----------------------------------------------------------------------- -->
     <footer id="footer-main">
       <section id="contact" class="contact-sec sec-pad">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="contact-detail">
-                <h1 class="section-title">Contact us</h1>
-      
-                <ul class="contact-ul">
-                  <li><i class="fa fa-location-dot"></i> 91, Muzaffarnagar, Ram Mandir, U.P</li>
-      
-                  <li>
-                    <i class="fa fa-phone"></i>
-                    <a href="tel:08510004495"><b>8888888888</b></a>,
-                    <a href="tel:08510005495"><b>7777777777</b></a>
-                  </li>
-      
-                  <li>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="himanshu@gmail.com"><b> himanshu@gmail.com</b></a>
-                  </li>
-                </ul>
-      
-                <span>
-                  <a href="#" class="fb"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#" class="insta"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
-                </span>
-              </div>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="contact-detail reveal">
+              <h1 class="section-title">Contact us</h1>
+
+              <ul class="contact-ul">
+                <li><i class="fa fa-location-dot"></i> 91, Muzaffarnagar, Ram Mandir, U.P</li>
+
+                <li>
+                  <i class="fa fa-phone"></i>
+                  <a href="tel:08510004495"><b>8888888888</b></a>,
+                  <a href="tel:08510005495"><b>7777777777</b></a>
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-envelope"></i>
+                  <a href="himanshu@gmail.com"><b> himanshu@gmail.com</b></a>
+                </li>
+              </ul>
+
+              <span>
+                <a href="#" class="fb" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="insta" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="twitter" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              </span>
             </div>
-      
-            <div class="col-md-6">
-              <form action="#" class="contFrm" method="POST">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <input type="text" name="name" placeholder="Your Name" class="inptFld" required />
-                  </div>
-      
-                  <div class="col-sm-6">
-                    <input type="email" name="email" placeholder="Email Address" class="inptFld" required />
-                  </div>
-      
-                  <div class="col-sm-6">
-                    <input type="tel" name="phone" placeholder="Phone Number" class="inptFld" required />
-                  </div>
-      
-                  <div class="col-sm-6">
-                    <input type="text" name="sub" placeholder="Subject" class="inptFld" required />
-                  </div>
-      
-                  <div class="col-12">
-                    <textarea class="inptFld" rows="" cols="" placeholder="Your Message..." required></textarea>
-                  </div>
-      
-                  <div class="col-12">
-                    <input type="submit" name="submit" value="SUBMIT" class="inptBtn" />
-                  </div>
+          </div>
+
+          <div class="footer-col">
+            <form action="#" class="contFrm reveal" method="POST">
+              <div class="form-grid">
+                <div class="form-col-6">
+                  <input type="text" name="name" placeholder="Your Name" class="inptFld" required />
                 </div>
-              </form>
-            </div>
+
+                <div class="form-col-6">
+                  <input type="email" name="email" placeholder="Email Address" class="inptFld" required />
+                </div>
+
+                <div class="form-col-6">
+                  <input type="tel" name="phone" placeholder="Phone Number" class="inptFld" required />
+                </div>
+
+                <div class="form-col-6">
+                  <input type="text" name="sub" placeholder="Subject" class="inptFld" required />
+                </div>
+
+                <div class="form-col-12">
+                  <textarea class="inptFld" placeholder="Your Message..." required></textarea>
+                </div>
+
+                <div class="form-col-12">
+                  <input type="submit" name="submit" value="SUBMIT" class="inptBtn" />
+                </div>
+              </div>
+            </form>
           </div>
-      
-          <div class="copy" style="text-align: center; margin-top: 20px;">
-            <p> Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              All rights reserved | Himanshu Choudhary
-            </p>
-          </div>
-      
+        </div>
+
+        <div class="copy" style="text-align: center">
+          <p>Copyright &copy; <span id="copyYear"></span> All rights reserved | Himanshu Choudhary</p>
         </div>
       </section>
     </footer>

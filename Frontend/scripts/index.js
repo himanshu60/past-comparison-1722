@@ -2,6 +2,7 @@
 /*                     copy this to get navbar and footer                     */
 /* -------------------------------------------------------------------------- */
 import { Navbar } from "../components/Navbar.js";
+import { initReveal, initCounters } from "./animations.js";
 // // import Footer from "../components/Footer.js";
 
 window.onload = () => {
@@ -20,48 +21,93 @@ nav.innerHTML = Navbar();
 // copy nav container from index.html line 12 only
 // In html file write like this "<script  type="module" src="./scripts/index.js"></script>" must include type=module
 
-// Function used to shrink nav bar removing paddings and adding black background
+/* -------------------------------------------------------------------------- */
+/*                  Shrink navbar + glass background on scroll                */
+/* -------------------------------------------------------------------------- */
 
-window.addEventListener("scroll", function () {
-  var navBar = document.querySelector(".nav");
-  if (document.documentElement.scrollTop > 50) {
-    navBar.classList.add("affix");
-    console.log("Working");
-  } else {
-    navBar.classList.remove("affix");
-  }
-});
+const visibleSentinel = document.getElementById("visible1");
+const navBar = document.querySelector(".nav");
 
-const myElement = document.getElementById("visible1");
-var navBar = document.querySelector(".nav");
-
-const observer = new IntersectionObserver((entries) => {
+const affixObserver = new IntersectionObserver((entries) => {
   const isVisible = entries[0].isIntersecting;
-  if (!isVisible) {
-    navBar.classList.add("affix");
-    console.log("Working");
-  } else {
-    navBar.classList.remove("affix");
+  navBar.classList.toggle("affix", !isVisible);
+});
+
+affixObserver.observe(visibleSentinel);
+
+/* -------------------------------------------------------------------------- */
+/*                     Active nav link (per current page)                     */
+/* -------------------------------------------------------------------------- */
+
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+document.querySelectorAll("#navlinks .nav-link").forEach((link) => {
+  const linkPage = link.getAttribute("href").split("/").pop();
+  if (linkPage === currentPage) {
+    link.classList.add("active");
   }
 });
 
-observer.observe(myElement);
+/* -------------------------------------------------------------------------- */
+/*                   Mobile drawer — hamburger open/close                     */
+/* -------------------------------------------------------------------------- */
 
-// Function to show and hide hamburger content
+const navTrigger = document.querySelector(".navTrigger");
+const mainListDiv = document.querySelector("#mainListDiv");
+let drawerOverlay = null;
 
-var navTrigger = document.querySelector(".navTrigger");
-var mainListDiv = document.querySelector("#mainListDiv");
+function openDrawer() {
+  navTrigger.classList.add("active");
+  mainListDiv.classList.add("show_list");
+  navTrigger.setAttribute("aria-expanded", "true");
 
-navTrigger.addEventListener("click", function () {
-  navTrigger.classList.toggle("active");
-  mainListDiv.classList.toggle("show_list");
-  mainListDiv.style.display = "block";
+  drawerOverlay = document.createElement("div");
+  drawerOverlay.className = "drawer-overlay";
+  drawerOverlay.addEventListener("click", closeDrawer);
+  document.body.appendChild(drawerOverlay);
+}
+
+function closeDrawer() {
+  navTrigger.classList.remove("active");
+  mainListDiv.classList.remove("show_list");
+  navTrigger.setAttribute("aria-expanded", "false");
+
+  if (drawerOverlay) {
+    drawerOverlay.remove();
+    drawerOverlay = null;
+  }
+}
+
+function toggleDrawer() {
+  if (mainListDiv.classList.contains("show_list")) {
+    closeDrawer();
+  } else {
+    openDrawer();
+  }
+}
+
+navTrigger.addEventListener("click", toggleDrawer);
+navTrigger.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    toggleDrawer();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && mainListDiv.classList.contains("show_list")) {
+    closeDrawer();
+  }
 });
 
 /* --------------------------------- Footer --------------------------------- */
 
 // let footer = document.getElementById("footer-main");
 // footer.innerHTML = Footer();
+
+const copyYearEl = document.getElementById("copyYear");
+if (copyYearEl) {
+  copyYearEl.textContent = new Date().getFullYear();
+}
 
 /* -------------------------------------------------------------------------- */
 /*                     copy this to get navbar and footer                     */
@@ -75,7 +121,6 @@ const TIMEOUT = 4000;
 let $radios, $activeRadio, currentIndex, radiosLength;
 
 const handleNext = () => {
-  // debugger;
   $radios = $('input[class*="slide-radio"]');
   $activeRadio = $('input[class*="slide-radio"]:checked');
 
@@ -98,7 +143,6 @@ const myStopFunction = () => {
 };
 
 $(".slider").hover(() => {
-  // debugger;
   myStopFunction();
 });
 
@@ -110,31 +154,34 @@ $(".slider").mouseleave(() => {
 
 let x = window.matchMedia("(max-width:760px)");
 let heroVideo = document.getElementById("herovideo");
-let largeVideo =
-  "./images/sec.mp4";
-  // "https://i.imgflip.com/k6p0l.gif";
-  // "https://media.tenor.com/4kD5W-ycpjMAAAAM/hair-hairstyle.gif"
-let smallVideo =
-  "";
+let largeVideo = "./images/sec.mp4";
+let smallVideo = "./images/sec.mp4";
 
 function videoChange() {
-  if (x.matches) {
-    heroVideo.src = smallVideo;
-  } else {
-    heroVideo.src = largeVideo;
-  }
+  heroVideo.src = x.matches ? smallVideo : largeVideo;
 }
 videoChange();
-// window.addEventListener('resize', videoChange);
 
-let timeout;
+let resizeTimeout;
 window.addEventListener("resize", function () {
-  clearTimeout(timeout);
-  timeout = setTimeout(videoChange, 250);
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(videoChange, 250);
 });
 
-// Remove the event listener when it's no longer needed
-window.removeEventListener("resize", videoChange);
+/* -------------------------------------------------------------------------- */
+/*                           Section-3 CTA behaviour                          */
+/* -------------------------------------------------------------------------- */
+
+document.getElementById("btn1").addEventListener("click", () => {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+});
+
+/* -------------------------------------------------------------------------- */
+/*                       Reveal-on-scroll + stat counters                     */
+/* -------------------------------------------------------------------------- */
+
+initReveal();
+initCounters();
 
 /* -------------------------------------------------------------------------- */
 /*           clearing the localStorage and changing Login to Logout           */
@@ -174,8 +221,3 @@ if (token) {
   loginstat.innerText = "Login";
   loginstat.href = "./html/login.html";
 }
-
-// provide login page an href
-// if(loginstat && loginstat.innerText == "Login"){
-//   loginstat.href = "./routes/loginSignup/login.html"
-// }

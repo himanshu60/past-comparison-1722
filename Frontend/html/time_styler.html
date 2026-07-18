@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/design-system.css" />
     <link rel="stylesheet" href="../CSS/time_styler.css" />
     <link rel="stylesheet" href="../CSS/navvvv.css">
     <title>Time & Styler</title>
   </head>
   <body>
+    <div id="toast-container" aria-live="polite"></div>
     <!-- navbar -->
     <nav>
       <div class="inside_nav">
@@ -91,7 +93,12 @@
       </div>
     </div>
   </body>
+  <script src="../scripts/toast.js"></script>
   <script>
+
+    if (!requireLoginOrRedirect("./login.html", "Please log in to book an appointment.")) {
+      document.querySelector(".Time_Style_main").style.display = "none";
+    }
 
     function syncNavAuth() {
       const loginLink = document.querySelector('a[href="./login.html"]');
@@ -205,6 +212,7 @@
 
     let bookBtn = document.getElementById("bookBtn")
     bookBtn.addEventListener("click", async()=>{
+      if (!requireLoginOrRedirect("./login.html", "Please log in to book an appointment.")) return;
 
       let time = document.getElementById("time").value;
       let barberName = document.getElementById("Barber").value;

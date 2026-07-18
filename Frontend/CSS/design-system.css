@@ -1,0 +1,172 @@
+/* ---------------------------------------------------------------------- */
+/*  Locks & Looks — shared design tokens                                  */
+/*  Load this file FIRST, before any other stylesheet, on every page that */
+/*  wants the premium visual system. Nothing in here is page-specific.    */
+/* ---------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap");
+
+:root {
+  /* Color primitives */
+  --color-primary: #8b5cf6;
+  --color-secondary: #ec4899;
+  --color-accent: #f59e0b;
+  --color-bg: #fafafa;
+  --color-dark: #0f172a;
+  --color-card: #ffffff;
+  --color-card-dark: #18181b;
+  --color-border: #e5e7eb;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+
+  /* Derived shades — required for AA-safe text on colored surfaces */
+  --color-primary-600: #7c3aed;
+  --color-secondary-600: #db2777;
+  --color-success-700: #15803d;
+  --color-danger-600: #dc2626;
+  --color-border-interactive: #6b7280;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-hover: linear-gradient(135deg, var(--color-primary-600), var(--color-secondary-600));
+  --gradient-accent-glow: radial-gradient(circle, rgba(245, 158, 11, 0.35), transparent 70%);
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+
+  /* Radius scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Shadow scale — soft, layered elevation */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 8px rgba(15, 23, 42, 0.06), 0 8px 20px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 8px 16px rgba(15, 23, 42, 0.08), 0 16px 40px rgba(15, 23, 42, 0.14);
+  --shadow-xl: 0 12px 24px rgba(15, 23, 42, 0.1), 0 24px 64px rgba(15, 23, 42, 0.18);
+  --shadow-glow-primary: 0 0 0 rgba(139, 92, 246, 0), 0 8px 24px rgba(139, 92, 246, 0.35);
+
+  /* Typography */
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --text-hero: 48px;
+  --text-section: 32px;
+  --text-card: 20px;
+  --text-body: 16px;
+  --text-caption: 14px;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
+
+  /* Stacking */
+  --z-nav: 9999;
+  --z-drawer: 10000;
+  --z-overlay: 10050;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --text-hero: 32px;
+    --text-section: 24px;
+    --text-card: 18px;
+  }
+}
+
+/* Generic reveal-on-scroll primitive — used by animations.js */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-slow) var(--ease-standard),
+    transform var(--duration-slow) var(--ease-standard);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/*  Shared toast notifications — paired with scripts/toast.js             */
+/* ---------------------------------------------------------------------- */
+
+#toast-container {
+  position: fixed;
+  top: var(--space-5);
+  right: var(--space-5);
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.toast {
+  min-width: 260px;
+  max-width: 340px;
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard);
+}
+
+.toast--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast--success {
+  background: var(--color-success-700);
+}
+
+.toast--error {
+  background: var(--color-danger-600);
+}
+
+.toast--info {
+  background: var(--color-primary-600);
+}
+
+/* ---------------------------------------------------------------------- */
+/*  Shared field validation error styles                                  */
+/* ---------------------------------------------------------------------- */
+
+.input-box.has-error input {
+  border-color: var(--color-danger) !important;
+}
+
+.field-error {
+  display: block;
+  color: var(--color-danger-600);
+  font-size: 12px;
+  font-weight: 500;
+  margin: -6px 0 8px;
+}

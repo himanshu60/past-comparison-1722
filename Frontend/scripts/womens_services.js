@@ -84,6 +84,7 @@ function renderCard(data) {
         button.setAttribute("id", "Book");
 
         button.addEventListener("click", function () {
+            if (!requireLoginOrRedirect("./login.html", "Please log in to book an appointment.")) return;
             localStorage.setItem("style_id", JSON.stringify(ele._id));
             window.location = "./time_styler.html";
         });
