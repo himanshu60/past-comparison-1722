@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/design-system.css" />
     <link rel="stylesheet" href="../CSS/time_styler.css" />
     <link rel="stylesheet" href="../CSS/navvvv.css">
+    <link rel="stylesheet" href="../CSS/nav-auth.css">
     <title>Time & Styler</title>
   </head>
   <body>
@@ -95,32 +96,14 @@
   </body>
   <script src="../scripts/api-config.js"></script>
   <script src="../scripts/toast.js"></script>
+  <script src="../scripts/nav-auth.js"></script>
   <script>
 
     if (!requireLoginOrRedirect("./login.html", "Please log in to book an appointment.")) {
       document.querySelector(".Time_Style_main").style.display = "none";
     }
 
-    function syncNavAuth() {
-      const loginLink = document.querySelector('a[href="./login.html"]');
-      if (!loginLink) return;
-
-      const stored = JSON.parse(localStorage.getItem("userdata") || "null");
-      const token = localStorage.getItem("token") || (stored && stored.token);
-
-      if (token) {
-        loginLink.textContent = "Logout";
-        loginLink.href = "#";
-        loginLink.addEventListener("click", (event) => {
-          event.preventDefault();
-          localStorage.removeItem("userdata");
-          localStorage.removeItem("token");
-          window.location.href = "../index.html";
-        });
-      }
-    }
-
-    syncNavAuth();
+    renderNavAuthState('a[href="./login.html"]', { homeHref: "../index.html", loginHref: "./login.html" });
 
     const data = [
       {

@@ -1,0 +1,33 @@
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-chip svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+  /* Margins (not just flex gap) so spacing still holds even where a more
+     specific pre-existing selector (e.g. navbar.css's .nav-link) overrides
+     this element's display back to inline-block. */
+  margin: 0 4px;
+}
+
+.user-chip svg:first-child {
+  margin-left: 0;
+}
+
+.user-chip svg:last-child {
+  margin-right: 0;
+}
+
+.user-chip .logout-icon {
+  opacity: 0.75;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.user-chip:hover .logout-icon,
+.user-chip:focus-visible .logout-icon {
+  opacity: 1;
+  transform: translateX(2px);
+}

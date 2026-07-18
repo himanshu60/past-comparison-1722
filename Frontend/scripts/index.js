@@ -184,18 +184,13 @@ initReveal();
 initCounters();
 
 /* -------------------------------------------------------------------------- */
-/*           clearing the localStorage and changing Login to Logout           */
+/*                    Nav auth state — Login/Signup vs user chip              */
 /* -------------------------------------------------------------------------- */
 
-let loginstat = document.getElementById("loginhref");
-let data = JSON.parse(localStorage.getItem("userdata")) || null;
-let token = localStorage.getItem("token") || (data && data.token);
-
-if (token) {
-  loginstat.innerText = "Logout";
-  loginstat.href = "#";
-  loginstat.addEventListener("click", (event) => {
-    event.preventDefault();
+renderNavAuthState("#loginhref", {
+  homeHref: "index.html",
+  loginHref: "./html/login.html",
+  confirmLogout: () =>
     Swal.fire({
       title: "Are you sure?",
       icon: "warning",
@@ -204,20 +199,7 @@ if (token) {
       cancelButtonColor: "#d33",
       confirmButtonText: "Logout!",
     }).then((result) => {
-      if (result.isConfirmed) {
-        localStorage.removeItem("userdata");
-        localStorage.removeItem("token");
-        loginstat.innerText = "Login";
-        loginstat.href = "./html/login.html";
-        Swal.fire("Logout Successfull!").then((res) => {
-          if (res) {
-            window.location.href = "index.html";
-          }
-        });
-      }
-    });
-  });
-} else {
-  loginstat.innerText = "Login";
-  loginstat.href = "./html/login.html";
-}
+      if (!result.isConfirmed) return false;
+      return Swal.fire("Logout Successfull!").then(() => true);
+    }),
+});

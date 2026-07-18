@@ -3,27 +3,8 @@ let baseurl = API_BASE_URL;
 let arr = [];
 const container = document.querySelector(".container");
 
-setupAuthNav();
+renderNavAuthState('a[href="./login.html"]', { homeHref: "../index.html", loginHref: "./login.html" });
 fetchdata();
-
-function setupAuthNav() {
-    const loginLink = document.querySelector('a[href="./login.html"]');
-    if (!loginLink) return;
-
-    const stored = JSON.parse(localStorage.getItem("userdata") || "null");
-    const token = localStorage.getItem("token") || (stored && stored.token);
-
-    if (token) {
-        loginLink.textContent = "Logout";
-        loginLink.href = "#";
-        loginLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            localStorage.removeItem("userdata");
-            localStorage.removeItem("token");
-            window.location.href = "../index.html";
-        });
-    }
-}
 
 async function fetchdata() {
     try {
