@@ -307,3 +307,51 @@ body {
     padding: var(--space-7) var(--space-5);
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                          Forgot password modal                             */
+/* -------------------------------------------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-overlay);
+  padding: var(--space-5);
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--color-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-7);
+  max-width: 420px;
+  width: 100%;
+  animation: auth-shell-in 0.3s var(--ease-standard);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-border-interactive);
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  color: var(--color-primary);
+}

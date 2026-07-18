@@ -190,3 +190,99 @@ async function register(event) {
     showToast("Unable to sign up right now. Please try again.", "error");
   }
 }
+
+// ---------------forgot password----------------
+
+const forgotModal = document.getElementById("forgotModal");
+const forgotOpenLink = document.getElementById("forgotPasswordLink");
+const forgotCloseBtn = document.getElementById("forgotClose");
+const forgotForm = document.getElementById("forgotForm");
+
+function openForgotModal() {
+  forgotModal.hidden = false;
+}
+
+function closeForgotModal() {
+  forgotModal.hidden = true;
+  clearFieldErrors(forgotForm);
+  forgotForm.reset();
+}
+
+forgotOpenLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  openForgotModal();
+});
+
+forgotCloseBtn.addEventListener("click", closeForgotModal);
+
+forgotModal.addEventListener("click", (event) => {
+  if (event.target === forgotModal) closeForgotModal();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !forgotModal.hidden) closeForgotModal();
+});
+
+function validateForgotFields(emailInput, passwordInput, confirmInput) {
+  let valid = true;
+
+  if (!emailInput.value.trim()) {
+    setFieldError(emailInput, "Email is required.");
+    valid = false;
+  } else if (!EMAIL_PATTERN.test(emailInput.value.trim())) {
+    setFieldError(emailInput, "Enter a valid email address.");
+    valid = false;
+  }
+
+  if (!passwordInput.value) {
+    setFieldError(passwordInput, "New password is required.");
+    valid = false;
+  } else if (passwordInput.value.length < 6) {
+    setFieldError(passwordInput, "Password must be at least 6 characters.");
+    valid = false;
+  }
+
+  if (confirmInput.value !== passwordInput.value) {
+    setFieldError(confirmInput, "Passwords do not match.");
+    valid = false;
+  }
+
+  return valid;
+}
+
+forgotForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  clearFieldErrors(forgotForm);
+
+  const emailInput = document.querySelector(".forgot-email");
+  const passwordInput = document.querySelector(".forgot-password");
+  const confirmInput = document.querySelector(".forgot-password-confirm");
+
+  if (!validateForgotFields(emailInput, passwordInput, confirmInput)) {
+    return;
+  }
+
+  try {
+    let res = await fetch(`${API_BASE_URL}/user/forgot-password`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailInput.value.trim(),
+        password: passwordInput.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await res.json();
+
+    if (res.ok) {
+      showToast(data.message || "Password reset! Please log in.", "success");
+      closeForgotModal();
+    } else {
+      showToast(data.message || "Reset failed. Please try again.", "error");
+    }
+  } catch (err) {
+    console.log(err);
+    showToast("Unable to reset password right now. Please try again.", "error");
+  }
+});

@@ -73,6 +73,21 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
+userRouter.post("/forgot-password", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      return res.status(404).send({ message: "No account found with that email" });
+    }
+    user.password = await bcrypt.hash(password, +process.env.saltRounds);
+    await user.save();
+    return res.send({ message: "Password reset successful" });
+  } catch (error) {
+    return res.status(500).send({ message: error.message });
+  }
+});
+
 userRouter.post("/logout", authentication, async (req, res) => {
   let { token } = req.body;
   const user_id = token.id;

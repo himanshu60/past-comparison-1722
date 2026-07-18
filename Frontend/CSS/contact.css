@@ -43,12 +43,10 @@ input {
   font-size: var(--text-caption);
 }
 
-.contact-ul {
-  color: #fff;
-}
-
-.contact-ul b {
-  color: #fff;
+.contact-subtitle {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--text-caption);
+  margin: -12px 0 var(--space-6);
 }
 
 .contact-sec {
@@ -71,88 +69,87 @@ input {
   }
 }
 
-.contact-sec .contact-ul li,
-.contact-ul b {
-  font-size: var(--text-body);
-  margin: var(--space-3) 0;
-  font-family: var(--font-body);
-  word-wrap: break-word;
-}
-
-.contact-sec .contact-ul i {
-  font-size: var(--text-caption);
-  padding: var(--space-3);
-  margin-right: var(--space-3);
-  border-radius: 50%;
-}
-
 .contact-detail a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
 }
 
-.contact-sec .contact-ul li b:hover {
+.contact-detail a:hover {
   color: var(--color-accent);
 }
 
-.contact-sec .contact-ul li .fa-location-dot {
-  color: var(--color-danger);
-  border: 2px solid rgba(239, 68, 68, 0.4);
-}
-
-.contact-sec .contact-ul li .fa-phone {
-  color: var(--color-success);
-  border: 2px solid rgba(34, 197, 94, 0.4);
-}
-
-.contact-sec .contact-ul li .fa-envelope {
-  color: var(--color-accent);
-  border: 2px solid rgba(245, 158, 11, 0.4);
-}
-
-.contact-detail span {
+.contact-info-list {
   display: flex;
+  flex-direction: column;
   gap: var(--space-3);
-  margin-top: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 
-.contact-detail span a {
-  font-size: var(--text-body);
-  width: 40px;
-  height: 40px;
+.contact-info-card {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: color var(--duration-fast) var(--ease-standard),
+  gap: var(--space-4);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  transition: transform var(--duration-fast) var(--ease-standard),
     background var(--duration-fast) var(--ease-standard);
 }
 
-.contact-detail span .fb {
-  color: #3b5998;
-  border: 2px solid #3b5998;
-}
-.contact-detail span .fb:hover {
-  color: #fff;
-  background-color: #3b5998;
+.contact-info-card:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.contact-detail span .insta {
-  color: #833ab4;
-  border: 2px solid #833ab4;
-}
-.contact-detail span .insta:hover {
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  background-color: #833ab4;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
-.contact-detail span .twitter {
-  color: #00acee;
-  border: 2px solid #00acee;
+.contact-info-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-accent);
+  margin-bottom: 2px;
 }
-.contact-detail span .twitter:hover {
+
+.contact-social-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #fff;
-  background-color: #00acee;
+  text-decoration: none;
+  font-size: var(--text-caption);
+  font-weight: 600;
+  transition: background var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.social-pill:hover,
+.social-pill:focus-visible {
+  background: var(--gradient-primary);
+  transform: translateY(-2px);
 }
 
 form.contFrm {
@@ -236,17 +233,6 @@ form.contFrm {
 @media (max-width: 991px) {
   .sec-pad {
     padding: var(--space-6) 0 0;
-  }
-
-  .contact-sec .contact-ul li,
-  .contact-ul b {
-    font-size: var(--text-caption);
-  }
-
-  .contact-sec .contact-ul i {
-    font-size: 12px;
-    padding: var(--space-2);
-    margin-right: var(--space-2);
   }
 }
 
