@@ -25,35 +25,33 @@ let passwordValue = document.getElementById("password");
 let form = document.querySelector("form");
 // userinfo
 
+function notify(message, type) {
+  if (typeof showToast === "function") {
+    showToast(message, type);
+  } else {
+    alert(message);
+  }
+}
+
 form.addEventListener("click", (e) => {
   e.preventDefault();
   localStorage.setItem("email", JSON.stringify(data));
   let passI = form.password.value;
   let emailI = form.email.value;
-  if (passI != "" && emailI != "") {
-    data.forEach((ele) => {
-      if (ele.email == emailI && ele.pass == passI) {
-        localStorage.setItem("e", emailI);
-        self.location = "dashboard.html";
-      }
-      
-    });
+
+  if (passI == "" || emailI == "") {
+    notify("Please enter both email and password.", "error");
+    return;
   }
-});
 
-
-// ------------------- DarkMode Part ----------------------
-
-const Moon = document.querySelector("#moon");
-const HTML = document.querySelector('html');
-const LoginBox = document.querySelector('.login-box');
-
-Moon.addEventListener("click", (e) => {
-  if (Moon.className == "bx bx-moon") {
-    e.target.className = "bx bxs-sun";
-    HTML.style.background="white";
-    LoginBox.id = "lg";
+  const match = data.find((ele) => ele.email == emailI && ele.pass == passI);
+  if (match) {
+    localStorage.setItem("e", emailI);
+    notify("Welcome back! Redirecting…", "success");
+    setTimeout(() => {
+      self.location = "dashboard.html";
+    }, 700);
   } else {
-     window.location.reload();
+    notify("Invalid admin credentials.", "error");
   }
 });

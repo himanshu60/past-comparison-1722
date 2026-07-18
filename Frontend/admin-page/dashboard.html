@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
     <script src="https://kit.fontawesome.com/e962f2728f.js" crossorigin="anonymous"></script>
+    <script src="../scripts/api-config.js"></script>
     <title>DASHBOARD</title>
     <style>
         #menu .items li:nth-child(1) {
@@ -56,7 +57,34 @@
         <!-- info box -->
         <h3 class="i-name">Dashboard</h3>
         <div class="values">
-     
+            <div class="val-box">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h3 class="stat-count" data-target="0" id="statUsers">0</h3>
+                    <span>Registered Users</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fa-solid fa-scissors"></i>
+                <div>
+                    <h3 class="stat-count" data-target="0" id="statStyles">0</h3>
+                    <span>Total Services</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fa-solid fa-person"></i>
+                <div>
+                    <h3 class="stat-count" data-target="0" id="statMale">0</h3>
+                    <span>Men's Services</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fa-solid fa-person-dress"></i>
+                <div>
+                    <h3 class="stat-count" data-target="0" id="statFemale">0</h3>
+                    <span>Women's Services</span>
+                </div>
+            </div>
         </div>
         <div class="board">
             <table width="100%">
@@ -80,6 +108,42 @@
         $(`#menu-btn`).click(function () {
             $(`#menu`).toggleClass("active")
         })
+
+        // ---- live KPI stats (only honestly-available data: user + style counts) ----
+        function animateCount(el, target) {
+            const duration = 1000;
+            const start = performance.now();
+            function step(now) {
+                const p = Math.min((now - start) / duration, 1);
+                el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+                if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        async function loadStats() {
+            async function count(path) {
+                try {
+                    const res = await fetch(`${API_BASE_URL}${path}`);
+                    const data = await res.json();
+                    return Array.isArray(data) ? data.length : 0;
+                } catch (err) {
+                    console.log("stat fetch failed:", path, err);
+                    return 0;
+                }
+            }
+            const [users, styles, male, female] = await Promise.all([
+                count("/user/get"),
+                count("/styles"),
+                count("/styles/male"),
+                count("/styles/female"),
+            ]);
+            animateCount(document.getElementById("statUsers"), users);
+            animateCount(document.getElementById("statStyles"), styles);
+            animateCount(document.getElementById("statMale"), male);
+            animateCount(document.getElementById("statFemale"), female);
+        }
+        loadStats();
         // variables
         let tbody = document.querySelector("tbody")
         let changeProfile = document.getElementById("pro")
